@@ -1,0 +1,227 @@
+﻿/* ===== PRICING HERO ===== */
+.pricing-hero {
+  padding: 100px 0 40px;
+  background: var(--dark, #0F0F1A);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* ===== PRICING SECTION ===== */
+.pricing-section {
+  background: var(--dark, #0F0F1A);
+  padding: 60px 0 80px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* ===== PRICING CARD ===== */
+.pricing-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(255,107,53,0.15);
+}
+
+/* ===== POPULAR CARD ===== */
+.pricing-card.popular {
+  border: 2px solid var(--primary, #FF6B35);
+  box-shadow: 0 0 40px rgba(255,107,53,0.2);
+  transform: scale(1.05);
+  background: rgba(255,107,53,0.05);
+}
+
+.pricing-card.popular:hover {
+  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 20px 60px rgba(255,107,53,0.3);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #FF6B35, #ff8f65);
+  color: #fff;
+  padding: 6px 24px;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ===== CARD SECTIONS ===== */
+.card-header {
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 25px;
+}
+
+.plan-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.plan-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.plan-period {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.card-body {
+  flex: 1;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.feature-list li {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.8);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.95rem;
+}
+
+.feature-list li i {
+  color: #FF6B35;
+  margin-right: 10px;
+  font-size: 0.85rem;
+}
+
+.card-footer {
+  padding-top: 25px;
+}
+
+/* ===== COMPARISON SECTION ===== */
+.comparison-section {
+  background: var(--secondary, #1A1A2E);
+  padding: 80px 0;
+}
+
+.comparison-table {
+  margin-top: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  align-items: center;
+}
+
+.comparison-row.header {
+  background: rgba(255,107,53,0.1);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #FF6B35;
+  font-size: 0.95rem;
+}
+
+.feature-name {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+}
+
+.plan-col {
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Inter', sans-serif;
+}
+
+.plan-col .fa-check {
+  color: #FF6B35;
+}
+
+.plan-col .fa-times {
+  color: rgba(255,255,255,0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  .pricing-card.popular {
+    transform: scale(1);
+  }
+  .pricing-card.popular:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .plan-price {
+    font-size: 2.5rem;
+  }
+  .comparison-row {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+  }
+}

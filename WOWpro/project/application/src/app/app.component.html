@@ -1,0 +1,7 @@
+<app-header *ngIf="showHeaderFooter()"></app-header>
+
+<main [class.with-header]="showHeaderFooter()">
+  <router-outlet></router-outlet>
+</main>
+
+<app-footer *ngIf="showHeaderFooter()"></app-footer>

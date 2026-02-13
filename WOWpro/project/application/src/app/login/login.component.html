@@ -1,0 +1,95 @@
+<section class="login-page">
+  <!-- Background Decorations -->
+  <div class="bg-decoration">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+  </div>
+
+  <div class="login-container animate-fadeInUp">
+    <div class="login-card glass">
+      <!-- Brand Header -->
+      <div class="login-header">
+        <div class="login-brand">
+          <div class="brand-icon">
+            <i class="fas fa-gear"></i>
+          </div>
+          <span class="brand-text">W<span class="text-gradient">O</span>W</span>
+        </div>
+        <h2 class="login-title">Welcome Back</h2>
+        <p class="login-subtitle">Sign in to your account</p>
+      </div>
+
+      <!-- Login Form -->
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" novalidate>
+        <!-- Email Field -->
+        <div class="form-group">
+          <label class="wow-label" for="emailId">
+            <i class="fas fa-envelope"></i> Email Address
+          </label>
+          <input
+            class="wow-input"
+            type="text"
+            id="emailId"
+            name="emailId"
+            ngModel
+            placeholder="Enter your email"
+            #emailId="ngModel"
+            required
+            minlength="2"
+            maxlength="80"
+          />
+          <div class="validation-msg" *ngIf="emailId.errors?.['required'] && emailId.touched">
+            <i class="fas fa-exclamation-circle"></i> Email is required
+          </div>
+          <div class="validation-msg" *ngIf="emailId.errors?.['minlength'] && emailId.touched">
+            <i class="fas fa-exclamation-circle"></i> Enter at least 2 characters
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <label class="wow-label" for="password">
+            <i class="fas fa-lock"></i> Password
+          </label>
+          <input
+            class="wow-input"
+            type="password"
+            id="password"
+            name="password"
+            ngModel
+            placeholder="Enter your password"
+            #password="ngModel"
+            required
+            minlength="2"
+            maxlength="15"
+          />
+          <div class="validation-msg" *ngIf="password.errors?.['required'] && password.touched">
+            <i class="fas fa-exclamation-circle"></i> Password is required
+          </div>
+          <div class="validation-msg" *ngIf="password.errors?.['minlength'] && password.touched">
+            <i class="fas fa-exclamation-circle"></i> Enter at least 2 characters
+          </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-banner" *ngIf="loginError">
+          <i class="fas fa-exclamation-triangle"></i> {{ loginError }}
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="btn-wow btn-wow-primary login-btn"
+          [disabled]="loginForm.invalid"
+        >
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+      </form>
+
+      <!-- Sign Up Link -->
+      <div class="login-footer">
+        <p>Don't have an account? <a routerLink="/signup" class="signup-link">Sign Up</a></p>
+      </div>
+    </div>
+  </div>
+</section>

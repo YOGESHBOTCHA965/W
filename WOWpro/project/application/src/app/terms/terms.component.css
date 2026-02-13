@@ -1,0 +1,97 @@
+﻿/* ===== HERO ===== */
+.legal-hero {
+  padding: 120px 0 60px;
+  background: var(--dark, #0F0F1A);
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.hero-title i {
+  color: #FF6B35;
+  margin-right: 12px;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 15px;
+}
+
+.last-updated {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.9rem;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== CONTENT ===== */
+.legal-content {
+  padding: 60px 0 80px;
+  background: var(--secondary, #1A1A2E);
+}
+
+.legal-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 35px 30px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.legal-card:hover {
+  border-color: rgba(255,107,53,0.2);
+}
+
+.card-number {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(255,107,53,0.1);
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+
+.legal-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #FF6B35;
+  margin-bottom: 15px;
+}
+
+.legal-card p {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.legal-card p strong {
+  color: rgba(255,255,255,0.85);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem; }
+  .legal-card { padding: 25px 20px; }
+  .card-number { font-size: 2rem; }
+}

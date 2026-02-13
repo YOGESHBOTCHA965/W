@@ -1,0 +1,232 @@
+<section class="signup-page">
+  <!-- Background Decorations -->
+  <div class="bg-decoration">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+  </div>
+
+  <div class="signup-container animate-fadeInUp">
+    <div class="signup-card glass">
+      <!-- Brand Header -->
+      <div class="signup-header">
+        <div class="signup-brand">
+          <div class="brand-icon">
+            <i class="fas fa-gear"></i>
+          </div>
+          <span class="brand-text">W<span class="text-gradient">O</span>W</span>
+        </div>
+        <h2 class="signup-title">Create Account</h2>
+        <p class="signup-subtitle">Join the Work On Wheels community</p>
+      </div>
+
+      <!-- Signup Form -->
+      <form #regForm="ngForm" (ngSubmit)="signUp(regForm.value)" novalidate>
+        <!-- Name Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="wow-label" for="firstName">
+              <i class="fas fa-user"></i> First Name
+            </label>
+            <input
+              class="wow-input"
+              type="text"
+              id="firstName"
+              name="firstName"
+              ngModel
+              placeholder="First name"
+              #firstName="ngModel"
+              required
+            />
+            <div class="validation-msg" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+              <div *ngIf="firstName.errors?.['required']">
+                <i class="fas fa-exclamation-circle"></i> First name is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="wow-label" for="lastName">
+              <i class="fas fa-user"></i> Last Name
+            </label>
+            <input
+              class="wow-input"
+              type="text"
+              id="lastName"
+              name="lastName"
+              ngModel
+              placeholder="Last name"
+              #lastName="ngModel"
+              required
+            />
+            <div class="validation-msg" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+              <div *ngIf="lastName.errors?.['required']">
+                <i class="fas fa-exclamation-circle"></i> Last name is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Number -->
+        <div class="form-group">
+          <label class="wow-label" for="contactNo">
+            <i class="fas fa-phone"></i> Contact Number
+          </label>
+          <input
+            class="wow-input"
+            type="text"
+            id="contactNo"
+            name="contactNo"
+            ngModel
+            placeholder="Enter contact number"
+            #contactNo="ngModel"
+            required
+            pattern="[0-9]+"
+          />
+          <div class="validation-msg" *ngIf="contactNo.invalid && (contactNo.dirty || contactNo.touched)">
+            <div *ngIf="contactNo.errors?.['required']">
+              <i class="fas fa-exclamation-circle"></i> Contact number is required
+            </div>
+            <div *ngIf="contactNo.errors?.['pattern']">
+              <i class="fas fa-exclamation-circle"></i> Only digits are allowed
+            </div>
+          </div>
+        </div>
+
+        <!-- DOB & Gender Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="wow-label" for="dob">
+              <i class="fas fa-calendar-alt"></i> Date of Birth
+            </label>
+            <input
+              class="wow-input"
+              type="date"
+              id="dob"
+              name="dob"
+              ngModel
+              #dob="ngModel"
+              required
+            />
+            <div class="validation-msg" *ngIf="dob.invalid && (dob.dirty || dob.touched)">
+              <div *ngIf="dob.errors?.['required']">
+                <i class="fas fa-exclamation-circle"></i> Date of birth is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="wow-label" for="gender">
+              <i class="fas fa-venus-mars"></i> Gender
+            </label>
+            <select
+              class="wow-select"
+              id="gender"
+              name="gender"
+              ngModel
+              #gender="ngModel"
+              required
+            >
+              <option value="" disabled selected>Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
+            <div class="validation-msg" *ngIf="gender.invalid && (gender.dirty || gender.touched)">
+              <div *ngIf="gender.errors?.['required']">
+                <i class="fas fa-exclamation-circle"></i> Gender is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="wow-label" for="emailId">
+            <i class="fas fa-envelope"></i> Email Address
+          </label>
+          <input
+            class="wow-input"
+            type="email"
+            id="emailId"
+            name="emailId"
+            ngModel
+            placeholder="Enter your email"
+            #emailId="ngModel"
+            required
+          />
+          <div class="validation-msg" *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)">
+            <div *ngIf="emailId.errors?.['required']">
+              <i class="fas fa-exclamation-circle"></i> Email is required
+            </div>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="wow-label" for="password">
+            <i class="fas fa-lock"></i> Password
+          </label>
+          <input
+            class="wow-input"
+            type="password"
+            id="password"
+            name="password"
+            ngModel
+            placeholder="Create a strong password"
+            #password="ngModel"
+            required
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"
+          />
+          <div class="validation-msg" *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors?.['required']">
+              <i class="fas fa-exclamation-circle"></i> Password is required
+            </div>
+            <div *ngIf="password.errors?.['pattern']">
+              <i class="fas fa-exclamation-circle"></i> Must contain uppercase, lowercase, number, special character &amp; 8+ chars
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label class="wow-label" for="confirmPassword">
+            <i class="fas fa-lock"></i> Confirm Password
+          </label>
+          <input
+            class="wow-input"
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            ngModel
+            placeholder="Re-enter your password"
+            #confirmPassword="ngModel"
+            required
+          />
+          <div class="validation-msg" *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+            <div *ngIf="confirmPassword.errors?.['required']">
+              <i class="fas fa-exclamation-circle"></i> Confirm password is required
+            </div>
+          </div>
+          <div class="validation-msg" *ngIf="confirmPassword.touched && password.value !== confirmPassword.value">
+            <i class="fas fa-exclamation-circle"></i> Passwords do not match
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="btn-wow btn-wow-primary signup-btn"
+          [disabled]="regForm.invalid"
+        >
+          <i class="fas fa-user-plus"></i> Sign Up
+        </button>
+      </form>
+
+      <!-- Login Link -->
+      <div class="signup-footer">
+        <p>Already have an account? <a routerLink="/login" class="login-link">Login</a></p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,73 @@
+<nav class="wow-navbar glass">
+  <div class="nav-container">
+    <!-- Brand -->
+    <a class="nav-brand" routerLink="/home" (click)="closeMobileMenu()">
+      <div class="brand-icon">
+        <i class="fas fa-gear"></i>
+      </div>
+      <span class="brand-text">W<span class="text-gradient">O</span>W</span>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.active]="mobileMenuOpen">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="nav-menu" [class.open]="mobileMenuOpen">
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/home" routerLinkActive="active" (click)="closeMobileMenu()">
+            <i class="fas fa-home"></i> Home
+          </a>
+        </li>
+        <li>
+          <a routerLink="/bikes" routerLinkActive="active" (click)="closeMobileMenu()">
+            <i class="fas fa-motorcycle"></i> Bikes
+          </a>
+        </li>
+        <li>
+          <a routerLink="/bicycleservices" routerLinkActive="active" (click)="closeMobileMenu()">
+            <i class="fas fa-bicycle"></i> Bicycles
+          </a>
+        </li>
+        <li>
+          <a routerLink="/aboutus" routerLinkActive="active" (click)="closeMobileMenu()">
+            <i class="fas fa-info-circle"></i> About Us
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contactus" routerLinkActive="active" (click)="closeMobileMenu()">
+            <i class="fas fa-envelope"></i> Contact Us
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="nav-pro-link" routerLink="/pro" routerLinkActive="active" (click)="closeMobileMenu()">
+          <i class="fas fa-wrench"></i> Register as Pro
+        </a>
+
+        <ng-container *ngIf="!isLoggedIn()">
+          <a class="btn-wow btn-wow-outline btn-wow-sm" routerLink="/login" (click)="closeMobileMenu()">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </a>
+          <a class="btn-wow btn-wow-primary btn-wow-sm" routerLink="/signup" (click)="closeMobileMenu()">
+            <i class="fas fa-user-plus"></i> Sign Up
+          </a>
+        </ng-container>
+
+        <ng-container *ngIf="isLoggedIn()">
+          <span class="nav-user-greeting">
+            <i class="fas fa-user-circle"></i> {{ getUserName() }}
+          </span>
+          <a class="btn-wow btn-wow-outline btn-wow-sm" routerLink="/logout" (click)="closeMobileMenu()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</nav>

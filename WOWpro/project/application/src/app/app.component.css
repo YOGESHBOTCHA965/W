@@ -1,0 +1,4 @@
+/* ===== App Component Styles ===== */
+main.with-header {
+  padding-top: 72px; /* Account for fixed header height */
+}

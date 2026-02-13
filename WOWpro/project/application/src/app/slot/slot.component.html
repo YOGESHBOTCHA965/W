@@ -1,0 +1,83 @@
+﻿<!-- ==================== SLOT BOOKING ==================== -->
+<section class="slot-section">
+  <div class="container">
+    <h1 class="section-title">Book Your <span class="text-gradient">Service Slot</span></h1>
+    <p class="section-subtitle">Choose your preferred date, time &amp; share your location details</p>
+
+    <div class="slot-grid">
+
+      <!-- BOOKING FORM -->
+      <div class="slot-form-card">
+        <h3 class="form-title"><i class="fas fa-calendar-alt me-2"></i> Booking Details</h3>
+
+        <div class="form-group">
+          <label class="form-label">Select Date</label>
+          <input type="date" class="wow-input" [min]="minDate" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Select Time Slot</label>
+          <select class="wow-select">
+            <option value="" disabled selected>Choose a time slot</option>
+            <option>10:00 AM - 12:00 PM</option>
+            <option>12:00 PM - 2:00 PM</option>
+            <option>2:00 PM - 4:00 PM</option>
+            <option>4:00 PM - 6:00 PM</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Your Address</label>
+          <textarea class="wow-input textarea" rows="3" placeholder="Enter your full address for doorstep service"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="wow-input" placeholder="Enter your 10-digit phone number" maxlength="10" />
+        </div>
+
+        <a routerLink="/thankyou" class="btn btn-wow-primary w-100 btn-confirm">
+          <i class="fas fa-check-circle me-2"></i> Confirm Booking
+        </a>
+      </div>
+
+      <!-- SIDEBAR INFO -->
+      <div class="slot-info-card">
+        <h3 class="info-title"><i class="fas fa-info-circle me-2"></i> What to Expect</h3>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-user-check"></i></div>
+          <div>
+            <h5>Technician Assignment</h5>
+            <p>A certified technician will be assigned to your booking and arrive at your doorstep on time.</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-tools"></i></div>
+          <div>
+            <h5>Professional Equipment</h5>
+            <p>Our technicians carry all necessary tools and genuine spare parts for your service.</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <h5>On-Time Service</h5>
+            <p>We respect your time. Expect the technician within the selected time slot window.</p>
+          </div>
+        </div>
+
+        <div class="guarantee-box">
+          <i class="fas fa-shield-alt"></i>
+          <div>
+            <h5>Service Guarantee</h5>
+            <p>All services come with a 7-day warranty. If any issue persists, we will fix it free of charge.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

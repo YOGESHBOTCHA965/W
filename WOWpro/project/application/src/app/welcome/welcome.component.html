@@ -1,0 +1,170 @@
+<!-- ===== Welcome / Landing Page ===== -->
+<div class="welcome-page">
+  <!-- Floating Particles Background -->
+  <div class="particles">
+    <div class="particle" *ngFor="let p of particles" [style.left]="p.left" [style.top]="p.top" [style.animationDelay]="p.delay" [style.width]="p.size" [style.height]="p.size"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="welcome-nav">
+    <div class="nav-brand">
+      <div class="brand-icon">
+        <i class="fas fa-cog fa-spin"></i>
+      </div>
+      <span class="brand-text">W<span class="text-gradient">O</span>W</span>
+    </div>
+    <div class="nav-actions">
+      <a routerLink="/login" class="btn-wow btn-wow-outline btn-wow-sm">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </a>
+      <a routerLink="/signup" class="btn-wow btn-wow-primary btn-wow-sm">
+        <i class="fas fa-user-plus"></i> Sign Up
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-badge animate-fadeInUp">
+        <i class="fas fa-bolt"></i> #1 Doorstep Vehicle Service
+      </div>
+      <h1 class="hero-title animate-fadeInUp" style="animation-delay: 0.2s">
+        Your Bike Needs Care?<br>
+        <span class="text-gradient">We Come To You.</span>
+      </h1>
+      <p class="hero-description animate-fadeInUp" style="animation-delay: 0.4s">
+        Professional bike &amp; bicycle repair at your doorstep. No more waiting at service centers.
+        Book online, and our certified mechanics arrive fully equipped to service your vehicle wherever you are.
+      </p>
+      <div class="hero-actions animate-fadeInUp" style="animation-delay: 0.6s">
+        <a routerLink="/signup" class="btn-wow btn-wow-primary btn-wow-lg">
+          Get Started Free <i class="fas fa-arrow-right"></i>
+        </a>
+        <a routerLink="/login" class="btn-wow btn-wow-dark btn-wow-lg">
+          <i class="fas fa-play-circle"></i> Explore Services
+        </a>
+      </div>
+      <div class="hero-stats animate-fadeInUp" style="animation-delay: 0.8s">
+        <div class="stat-item">
+          <div class="stat-number">10K+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Expert Mechanics</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Service Locations</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual animate-slideRight">
+      <div class="hero-image-wrapper">
+        <div class="glow-circle"></div>
+        <div class="hero-icon-display">
+          <i class="fas fa-motorcycle"></i>
+        </div>
+        <div class="floating-cards">
+          <div class="float-card card-1 animate-float">
+            <i class="fas fa-wrench"></i>
+            <span>Expert Repair</span>
+          </div>
+          <div class="float-card card-2 animate-float" style="animation-delay: 1s">
+            <i class="fas fa-home"></i>
+            <span>At Your Door</span>
+          </div>
+          <div class="float-card card-3 animate-float" style="animation-delay: 2s">
+            <i class="fas fa-shield-alt"></i>
+            <span>Guaranteed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Strip -->
+  <section class="features-strip">
+    <div class="feature-item" *ngFor="let feature of features">
+      <div class="feature-icon">
+        <i [class]="feature.icon"></i>
+      </div>
+      <div class="feature-text">
+        <h4>{{ feature.title }}</h4>
+        <p>{{ feature.desc }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="section-header">
+      <span class="wow-badge"><i class="fas fa-cogs"></i> Simple Process</span>
+      <h2 class="section-title">How <span>WOW</span> Works</h2>
+      <p class="section-subtitle">Get your vehicle serviced in 3 easy steps</p>
+    </div>
+    <div class="steps-container">
+      <div class="step-card" *ngFor="let step of steps; let i = index">
+        <div class="step-number">0{{ i + 1 }}</div>
+        <div class="step-icon">
+          <i [class]="step.icon"></i>
+        </div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.desc }}</p>
+        <div class="step-connector" *ngIf="i < steps.length - 1">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="services-preview">
+    <div class="section-header">
+      <span class="wow-badge"><i class="fas fa-tools"></i> Our Services</span>
+      <h2 class="section-title">What We <span>Offer</span></h2>
+      <p class="section-subtitle">Comprehensive vehicle care solutions at your convenience</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-icon">
+          <i [class]="service.icon"></i>
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.desc }}</p>
+        <ul class="service-features">
+          <li *ngFor="let f of service.points">
+            <i class="fas fa-check-circle"></i> {{ f }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Experience <span class="text-gradient">Hassle-Free</span> Service?</h2>
+      <p>Join thousands of satisfied riders. Sign up now and get your first service at a special introductory price.</p>
+      <div class="cta-actions">
+        <a routerLink="/signup" class="btn-wow btn-wow-primary btn-wow-lg">
+          Create Free Account <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Footer -->
+  <footer class="welcome-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="brand-icon"><i class="fas fa-cog"></i></div>
+        <span>WOW - Work On Wheels</span>
+      </div>
+      <p>&copy; 2026 Work On Wheels. All rights reserved.</p>
+    </div>
+  </footer>
+</div>

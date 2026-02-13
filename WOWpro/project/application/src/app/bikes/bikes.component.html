@@ -1,0 +1,171 @@
+﻿<!-- ==================== HERO SECTION ==================== -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <h1 class="hero-title animate-fadeInUp">
+      Motorcycle <span class="text-gradient">Service &amp; Repair</span>
+    </h1>
+    <p class="hero-subtitle animate-fadeInUp">
+      Expert doorstep bike service by certified mechanics. From periodic maintenance to engine overhauls &mdash; we bring the garage to you.
+    </p>
+    <div class="hero-buttons animate-fadeInUp">
+      <a routerLink="/premium" class="btn btn-wow-primary me-3">Book Service</a>
+      <a routerLink="/contact-us" class="btn btn-wow">Contact Us</a>
+    </div>
+    <div class="hero-stats animate-fadeInUp">
+      <div class="stat-item">
+        <span class="stat-number">15K+</span>
+        <span class="stat-label">Bikes Serviced</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Expert Mechanics</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">4.8&#9733;</span>
+        <span class="stat-label">Customer Rating</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICE CATEGORIES ==================== -->
+<section class="section-dark">
+  <div class="container">
+    <h2 class="section-title">Our <span class="text-gradient">Service Categories</span></h2>
+    <p class="section-subtitle">Comprehensive motorcycle care &mdash; all at your doorstep</p>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-wrench"></i></div>
+        <h4>Periodic Service</h4>
+        <p>Regular maintenance including oil change, filter replacement, chain lubrication &amp; full inspection to keep your bike running smooth.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-car-crash"></i></div>
+        <h4>Accidental Repair</h4>
+        <p>Complete accidental damage repair &mdash; dent fixing, painting, part replacements &amp; structural restoration by experts.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-cogs"></i></div>
+        <h4>Engine Repair</h4>
+        <p>From minor tuning to complete engine overhauls, our certified mechanics handle all engine-related issues with precision.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-circle-notch"></i></div>
+        <h4>Tyres at Home</h4>
+        <p>Tyre replacement, puncture repair, wheel balancing &amp; alignment &mdash; all done at your doorstep with premium quality tyres.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-battery-full"></i></div>
+        <h4>Batteries</h4>
+        <p>Battery testing, replacement &amp; jumpstart services. We carry all major brands for instant doorstep installation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUICK BOOK ==================== -->
+<section class="section-darker">
+  <div class="container">
+    <h2 class="section-title">Quick <span class="text-gradient">Book</span></h2>
+    <p class="section-subtitle">Select your bike details and book a service in seconds</p>
+
+    <div class="quick-book-card">
+      <div class="row g-4 align-items-end">
+        <div class="col-md-3">
+          <label class="form-label">Select Brand</label>
+          <select class="wow-select" (change)="onSelect($event)">
+            <option value="">Select Brand</option>
+            <option *ngFor="let brands of brand" [value]="brands.id">{{ brands.name }}</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label">Select Model</label>
+          <select class="wow-select">
+            <option value="">Select Model</option>
+            <option *ngFor="let Modals of Modal">{{ Modals.name }}</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label">Select City</label>
+          <select class="wow-select">
+            <option value="">Select City</option>
+            <option>Gachibowli</option>
+            <option>Madhapur</option>
+            <option>Kondapur</option>
+            <option>Kukatpally</option>
+            <option>LB Nagar</option>
+            <option>Attapur</option>
+            <option>Mehdipatnam</option>
+            <option>Nagole</option>
+            <option>Uppal</option>
+            <option>Secunderabad</option>
+            <option>JNTU</option>
+            <option>Bachupally</option>
+            <option>Dilsukhnagar</option>
+            <option>Shamshabad</option>
+            <option>Lingampally</option>
+            <option>ECIL</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <button class="btn btn-wow-primary w-100" routerLink="/premium">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY CHOOSE WOW ==================== -->
+<section class="section-dark">
+  <div class="container">
+    <h2 class="section-title">Why Choose <span class="text-gradient">WOW for Bikes?</span></h2>
+    <p class="section-subtitle">We deliver more than just service &mdash; we deliver trust</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-home"></i></div>
+        <h4>Doorstep Service</h4>
+        <p>No need to visit a garage. Our mechanics come to your location with all tools &amp; parts.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-user-shield"></i></div>
+        <h4>Certified Mechanics</h4>
+        <p>All our technicians are trained, verified &amp; experienced with 5+ years in the industry.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-tags"></i></div>
+        <h4>Transparent Pricing</h4>
+        <p>No hidden charges. Get upfront quotes before any work begins on your motorcycle.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>Genuine Parts</h4>
+        <p>We use only OEM &amp; genuine spare parts with warranty for lasting quality repairs.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+        <h4>Quick Turnaround</h4>
+        <p>Most services completed within 2&#8211;4 hours. Same-day service available on request.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-headset"></i></div>
+        <h4>24/7 Support</h4>
+        <p>Round-the-clock customer support for emergencies, queries &amp; service scheduling.</p>
+      </div>
+    </div>
+  </div>
+</section>

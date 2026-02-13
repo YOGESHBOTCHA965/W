@@ -1,0 +1,229 @@
+﻿/* ===== SLOT SECTION ===== */
+.slot-section {
+  padding: 100px 0 80px;
+  background: var(--dark, #0F0F1A);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ===== FORM CARD ===== */
+.slot-form-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 40px 35px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.form-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.form-title i {
+  color: #FF6B35;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.wow-input,
+.wow-select {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.wow-input:focus,
+.wow-select:focus {
+  border-color: #FF6B35;
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.15);
+}
+
+.wow-input::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.wow-select option {
+  background: #1A1A2E;
+  color: #fff;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+.btn-confirm {
+  padding: 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 10px;
+  border-radius: 12px;
+}
+
+/* ===== INFO CARD ===== */
+.slot-info-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 40px 35px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.info-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.info-title i {
+  color: #FF6B35;
+}
+
+.info-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  background: linear-gradient(135deg, rgba(255,107,53,0.2), rgba(255,107,53,0.05));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-icon i {
+  color: #FF6B35;
+  font-size: 1rem;
+}
+
+.info-item h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.info-item p {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== GUARANTEE BOX ===== */
+.guarantee-box {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(255,107,53,0.06);
+  border: 1px solid rgba(255,107,53,0.2);
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.guarantee-box > i {
+  font-size: 1.5rem;
+  color: #FF6B35;
+  margin-top: 2px;
+}
+
+.guarantee-box h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FF6B35;
+  margin-bottom: 5px;
+}
+
+.guarantee-box p {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .slot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .slot-form-card,
+  .slot-info-card {
+    padding: 30px 20px;
+  }
+}

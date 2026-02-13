@@ -1,0 +1,376 @@
+/* ==================== CSS VARIABLES ==================== */
+:host {
+  --primary: #FF6B35;
+  --primary-dark: #e55a2b;
+  --secondary: #1A1A2E;
+  --dark: #0F0F1A;
+  --card-bg: #16162a;
+  --card-border: #2a2a4a;
+  --text-light: #e0e0e0;
+  --text-muted: #a0a0b8;
+  --gradient-primary: linear-gradient(135deg, #FF6B35, #ff8f65);
+  display: block;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-light);
+}
+
+/* ==================== UTILITIES ==================== */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.section-dark {
+  background: var(--secondary);
+  padding: 80px 0;
+}
+
+.section-darker {
+  background: var(--dark);
+  padding: 80px 0;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero-section {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 50%, #0F0F1A 100%);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255,107,53,0.12) 0%, transparent 60%),
+              radial-gradient(circle at 70% 80%, rgba(255,107,53,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-buttons .btn {
+  padding: 14px 32px;
+  font-weight: 600;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-wow-primary {
+  background: var(--gradient-primary);
+  border: none;
+  color: #fff;
+}
+
+.btn-wow-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,107,53,0.4);
+  color: #fff;
+}
+
+.btn-wow {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-wow:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.stat-number {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ==================== SERVICE TYPES ==================== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 35px 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(255,107,53,0.15);
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.service-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==================== QUICK BOOK ==================== */
+.quick-book-card {
+  background: rgba(22, 22, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.quick-book-card .wow-select {
+  background: var(--dark);
+  border: 1px solid var(--card-border);
+  color: var(--text-light);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  width: 100%;
+  transition: border-color 0.3s ease;
+  appearance: auto;
+}
+
+.quick-book-card .wow-select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.15);
+}
+
+.quick-book-card .form-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+/* ==================== BENEFITS ==================== */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.benefit-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255,107,53,0.12);
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.benefit-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.benefit-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==================== ANIMATIONS ==================== */
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-stats {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-dark,
+  .section-darker {
+    padding: 50px 0;
+  }
+
+  .hero-section {
+    min-height: 75vh;
+  }
+
+  .quick-book-card {
+    padding: 25px;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-content {
+    padding: 30px 15px;
+  }
+}

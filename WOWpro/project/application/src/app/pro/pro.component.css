@@ -1,0 +1,220 @@
+﻿/* ===== PRO HERO ===== */
+.pro-hero {
+  padding: 120px 0 80px;
+  background: var(--dark, #0F0F1A);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.65);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* ===== BENEFITS ===== */
+.pro-benefits {
+  background: var(--secondary, #1A1A2E);
+  padding: 80px 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.benefit-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 35px 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255,107,53,0.12);
+  border-color: rgba(255,107,53,0.3);
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(255,107,53,0.2), rgba(255,107,53,0.05));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.benefit-icon i {
+  font-size: 1.5rem;
+  color: #FF6B35;
+}
+
+.benefit-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== STEPS ===== */
+.pro-steps {
+  background: var(--dark, #0F0F1A);
+  padding: 80px 0;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.step-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 35px 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #FF6B35, #ff8f65);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 auto 20px;
+}
+
+.step-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== CTA ===== */
+.pro-cta {
+  background: var(--secondary, #1A1A2E);
+  padding: 80px 0;
+}
+
+.cta-card {
+  background: rgba(255,107,53,0.06);
+  border: 1px solid rgba(255,107,53,0.2);
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.cta-card p {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .cta-card {
+    padding: 40px 25px;
+  }
+}

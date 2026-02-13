@@ -1,0 +1,410 @@
+/* ===== WOW - Work On Wheels Global Design System ===== */
+
+:root {
+  --primary: #FF6B35;
+  --primary-dark: #E85A2A;
+  --primary-light: #FF8C5A;
+  --secondary: #1A1A2E;
+  --accent: #16213E;
+  --dark: #0F0F1A;
+  --light: #F8F9FA;
+  --white: #FFFFFF;
+  --gray-100: #F1F3F5;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-400: #CED4DA;
+  --gray-500: #ADB5BD;
+  --gray-600: #6C757D;
+  --gray-700: #495057;
+  --gray-800: #343A40;
+  --gray-900: #212529;
+  --success: #2ECC71;
+  --info: #3498DB;
+  --warning: #F39C12;
+  --danger: #E74C3C;
+  --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8C5A 100%);
+  --gradient-dark: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+  --gradient-hero: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 50%, #16213E 100%);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+  --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+  --shadow-glow: 0 0 40px rgba(255,107,53,0.3);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 50px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  background-color: var(--dark);
+  color: var(--gray-300);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Buttons ===== */
+.btn-wow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.btn-wow-primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+}
+
+.btn-wow-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255,107,53,0.5);
+  color: var(--white);
+}
+
+.btn-wow-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-wow-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-wow-dark {
+  background: var(--secondary);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-wow-dark:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  color: var(--white);
+}
+
+.btn-wow-lg {
+  padding: 18px 42px;
+  font-size: 18px;
+}
+
+.btn-wow-sm {
+  padding: 10px 24px;
+  font-size: 14px;
+}
+
+/* ===== Section Styles ===== */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.section-title span {
+  color: var(--primary);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--gray-500);
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+
+/* ===== Cards ===== */
+.wow-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.wow-card:hover {
+  border-color: rgba(255,107,53,0.3);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== Glass Effect ===== */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== Form Inputs ===== */
+.wow-input {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  color: var(--white);
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  transition: var(--transition);
+  outline: none;
+}
+
+.wow-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.15);
+  background: rgba(255,255,255,0.08);
+}
+
+.wow-input::placeholder {
+  color: var(--gray-600);
+}
+
+.wow-select {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  color: var(--white);
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  transition: var(--transition);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23adb5bd' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.wow-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.15);
+}
+
+.wow-select option {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.wow-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-400);
+  margin-bottom: 6px;
+  font-family: var(--font-secondary);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255,107,53,0.3); }
+  50% { box-shadow: 0 0 40px rgba(255,107,53,0.6); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-slideLeft {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.animate-slideRight {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ===== Badge ===== */
+.wow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--radius-full);
+  background: rgba(255,107,53,0.15);
+  color: var(--primary);
+  border: 1px solid rgba(255,107,53,0.3);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ===== Toast Override ===== */
+.toast-success {
+  background-color: var(--success) !important;
+}
+
+.toast-error {
+  background-color: var(--danger) !important;
+}
+
+/* ===== Utility ===== */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-dark-custom {
+  background: var(--dark);
+}
+
+.bg-secondary-custom {
+  background: var(--secondary);
+}
+
+/* ===== Alert Styles ===== */
+.alert-danger {
+  background: rgba(231,76,60,0.1);
+  border: 1px solid rgba(231,76,60,0.3);
+  color: #E74C3C;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .btn-wow-lg {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+}

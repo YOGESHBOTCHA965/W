@@ -1,0 +1,181 @@
+﻿/* ===== SECTION ===== */
+.thankyou-section {
+  padding: 120px 0 80px;
+  background: var(--dark, #0F0F1A);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.thankyou-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 50px 40px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== ANIMATED CHECKMARK ===== */
+.success-icon {
+  margin-bottom: 30px;
+}
+
+.checkmark-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B35, #FF8F6B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards,
+             pulse 2s ease-in-out 0.6s infinite;
+}
+
+.checkmark-circle i {
+  font-size: 2.5rem;
+  color: #fff;
+  animation: checkFade 0.4s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes checkFade {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,53,0.3); }
+  50% { box-shadow: 0 0 0 15px rgba(255,107,53,0); }
+}
+
+/* ===== TYPOGRAPHY ===== */
+.thankyou-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.thankyou-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.65);
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.thankyou-message {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+}
+
+/* ===== WHAT'S NEXT ===== */
+.whats-next {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 30px 25px;
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+.whats-next h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.whats-next h3 i {
+  color: #FF6B35;
+  margin-right: 8px;
+}
+
+.next-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.step-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: linear-gradient(135deg, rgba(255,107,53,0.2), rgba(255,107,53,0.05));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #FF6B35;
+  font-size: 0.95rem;
+}
+
+.step-item h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.step-item p {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== BUTTONS ===== */
+.thankyou-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-home,
+.btn-book {
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .thankyou-title { font-size: 2rem; }
+  .thankyou-card { padding: 35px 20px; }
+  .thankyou-actions { flex-direction: column; }
+  .btn-home, .btn-book { justify-content: center; }
+}

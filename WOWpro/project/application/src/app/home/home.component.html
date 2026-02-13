@@ -1,0 +1,442 @@
+﻿<!-- ==================== HERO BANNER ==================== -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <!-- Welcome Message -->
+    <div class="welcome-banner animate-fadeInUp" *ngIf="userName">
+      <i class="fas fa-hand-sparkles"></i>
+      Welcome back, <strong>{{ userName }}</strong>!
+    </div>
+    <h1 class="hero-title animate-fadeInUp">Expert Vehicle Care,<br><span class="text-gradient">At Your Doorstep</span></h1>
+    <p class="hero-subtitle animate-fadeInUp">India's most trusted doorstep bike & bicycle repair service. Professional mechanics, genuine parts, and hassle-free experience, all at your convenience.</p>
+    <div class="hero-buttons animate-fadeInUp">
+      <a routerLink="/premium" class="btn btn-wow-primary btn-lg me-3"><i class="fas fa-calendar-check me-2"></i>Book Now</a>
+      <a routerLink="/aboutus" class="btn btn-wow btn-lg"><i class="fas fa-info-circle me-2"></i>Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-number">10K+</span><span class="stat-label">Happy Customers</span></div>
+      <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Expert Mechanics</span></div>
+      <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Service Areas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY CHOOSE US ==================== -->
+<section class="section-dark" id="why-choose-us">
+  <div class="container">
+    <h2 class="section-title">Why Choose <span class="text-gradient">WOW</span></h2>
+    <p class="section-subtitle">We bring the workshop to your doorstep with certified professionals and genuine parts</p>
+    <div class="features-grid">
+      <div class="feature-card wow-card">
+        <div class="feature-icon"><i class="fas fa-home"></i></div>
+        <h4>Doorstep Service</h4>
+        <p>No need to travel anywhere. Our mechanics come to your home, office, or any location you prefer.</p>
+      </div>
+      <div class="feature-card wow-card">
+        <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+        <h4>Certified Mechanics</h4>
+        <p>All our mechanics are trained, certified, and experienced professionals you can trust.</p>
+      </div>
+      <div class="feature-card wow-card">
+        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+        <h4>Quick Turnaround</h4>
+        <p>Most services completed within 2-4 hours. We value your time and get you back on the road fast.</p>
+      </div>
+      <div class="feature-card wow-card">
+        <div class="feature-icon"><i class="fas fa-cogs"></i></div>
+        <h4>Genuine Parts</h4>
+        <p>We use only OEM and genuine spare parts to ensure the best performance for your vehicle.</p>
+      </div>
+      <div class="feature-card wow-card">
+        <div class="feature-icon"><i class="fas fa-tags"></i></div>
+        <h4>Affordable Pricing</h4>
+        <p>Transparent pricing with no hidden costs. Get quality service at competitive rates.</p>
+      </div>
+      <div class="feature-card wow-card">
+        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>6-Month Warranty</h4>
+        <p>Every service comes with a 6-month warranty on parts and labor for your peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== HOW IT WORKS ==================== -->
+<section class="section-darker" id="how-it-works">
+  <div class="container">
+    <h2 class="section-title">How It <span class="text-gradient">Works</span></h2>
+    <p class="section-subtitle">Three simple steps to get your vehicle serviced</p>
+    <div class="steps-container">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-icon"><i class="fas fa-laptop"></i></div>
+        <h4>Book Online</h4>
+        <p>Enter your vehicle details, select a convenient time slot, and book your service in minutes.</p>
+      </div>
+      <div class="step-connector"><i class="fas fa-chevron-right"></i></div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-icon"><i class="fas fa-motorcycle"></i></div>
+        <h4>We Arrive</h4>
+        <p>Our certified mechanic arrives at your doorstep fully equipped with tools and genuine parts.</p>
+      </div>
+      <div class="step-connector"><i class="fas fa-chevron-right"></i></div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-icon"><i class="fas fa-smile-beam"></i></div>
+        <h4>Happy Ride</h4>
+        <p>Your vehicle is serviced on time. Get back to doing what you love. Riding!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CHOOSE YOUR VEHICLE ==================== -->
+<section class="section-dark" id="choose-vehicle">
+  <div class="container">
+    <h2 class="section-title">Choose Your <span class="text-gradient">Vehicle</span></h2>
+    <p class="section-subtitle">Select your vehicle type to explore our specialized services</p>
+    <div class="vehicle-cards">
+      <a routerLink="/bikes" class="vehicle-card wow-card">
+        <div class="vehicle-icon"><i class="fas fa-motorcycle"></i></div>
+        <h3>Bike Service</h3>
+        <p>Complete service solutions for all motorcycle brands, from oil change to engine overhaul.</p>
+        <span class="vehicle-cta">Explore Services <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a routerLink="/bicycleservices" class="vehicle-card wow-card">
+        <div class="vehicle-icon"><i class="fas fa-bicycle"></i></div>
+        <h3>Bicycle Service</h3>
+        <p>Professional bicycle maintenance including gear tuning, brake adjustment, and full overhaul.</p>
+        <span class="vehicle-cta">Explore Services <i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICE PLANS ==================== -->
+<section class="section-darker" id="service-plans">
+  <div class="container">
+    <h2 class="section-title">Service <span class="text-gradient">Plans</span></h2>
+    <p class="section-subtitle">Choose the plan that fits your needs</p>
+    <div class="plans-grid">
+      <div class="plan-card wow-card">
+        <div class="plan-badge">Standard</div>
+        <div class="plan-icon"><i class="fas fa-wrench"></i></div>
+        <h4>Standard Service</h4>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> Oil Change</li>
+          <li><i class="fas fa-check"></i> Air Filter Cleaning</li>
+          <li><i class="fas fa-check"></i> Chain Lubrication</li>
+          <li><i class="fas fa-check"></i> Basic Inspection</li>
+        </ul>
+      </div>
+      <div class="plan-card wow-card plan-featured">
+        <div class="plan-badge">Premium</div>
+        <div class="plan-icon"><i class="fas fa-star"></i></div>
+        <h4>Premium Service</h4>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> Everything in Standard</li>
+          <li><i class="fas fa-check"></i> Brake Inspection</li>
+          <li><i class="fas fa-check"></i> Clutch Adjustment</li>
+          <li><i class="fas fa-check"></i> Carburetor Tuning</li>
+        </ul>
+      </div>
+      <div class="plan-card wow-card">
+        <div class="plan-badge">Advanced</div>
+        <div class="plan-icon"><i class="fas fa-tools"></i></div>
+        <h4>Advanced Service</h4>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> Everything in Premium</li>
+          <li><i class="fas fa-check"></i> Engine Overhaul</li>
+          <li><i class="fas fa-check"></i> Full Body Wash</li>
+          <li><i class="fas fa-check"></i> Complete Diagnostics</li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a routerLink="/premium" class="btn btn-wow-primary btn-lg"><i class="fas fa-eye me-2"></i>View All Plans</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICE PROCESS ==================== -->
+<section class="section-dark" id="service-process">
+  <div class="container">
+    <h2 class="section-title">Our Service <span class="text-gradient">Process</span></h2>
+    <p class="section-subtitle">Multiple service modes to suit your convenience</p>
+
+    <!-- Doorstep Service -->
+    <div class="service-type-block">
+      <div class="service-type-header">
+        <div class="service-type-icon"><i class="fas fa-home"></i></div>
+        <h3>Doorstep Service @ Home</h3>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-laptop"></i></div>
+          <h5>Book Online</h5>
+          <p>Enter details and pick your preferred service day & time.</p>
+        </div>
+        <div class="process-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-truck"></i></div>
+          <h5>We Come to You</h5>
+          <p>WOW service arrives at your home, office, or roadside.</p>
+        </div>
+        <div class="process-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-smile-beam"></i></div>
+          <h5>Happy Ride</h5>
+          <p>Your vehicle is ready on time. Ride happy!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced Service -->
+    <div class="service-type-block">
+      <div class="service-type-header">
+        <div class="service-type-icon"><i class="fas fa-warehouse"></i></div>
+        <h3>Advanced Service @ Our Station</h3>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-laptop"></i></div>
+          <h5>Book Online</h5>
+          <p>Enter details and pick your preferred service day & time.</p>
+        </div>
+        <div class="process-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h5>Drop In</h5>
+          <p>Drop your vehicle at our fully equipped service station.</p>
+        </div>
+        <div class="process-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-smile-beam"></i></div>
+          <h5>Happy Ride</h5>
+          <p>Collect your serviced vehicle and ride with confidence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pickup & Drop -->
+    <div class="service-type-block">
+      <div class="service-type-header">
+        <div class="service-type-icon"><i class="fas fa-exchange-alt"></i></div>
+        <h3>Pickup & Drop Service</h3>
+      </div>
+      <div class="process-steps four-steps">
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-laptop"></i></div>
+          <h5>Book Online</h5>
+          <p>Enter details and pick your preferred service day & time.</p>
+        </div>
+        <div class="process-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-truck-pickup"></i></div>
+          <h5>Pickup</h5>
+          <p>We come to your doorstep to pick up your vehicle.</p>
+        </div>
+        <div class="process-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-tools"></i></div>
+          <h5>Service Station</h5>
+          <p>Vehicle serviced at our fully equipped station.</p>
+        </div>
+        <div class="process-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+        <div class="process-step">
+          <div class="process-step-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h5>Drop Off</h5>
+          <p>Vehicle delivered back to your doorstep.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BRANDS WE WORK ON ==================== -->
+<section class="section-darker" id="brands">
+  <div class="container">
+    <h2 class="section-title">Brands We <span class="text-gradient">Work On</span></h2>
+    <p class="section-subtitle">Trusted service for all major two-wheeler brands</p>
+    <div class="brands-strip">
+      <span class="brand-badge">Hero</span>
+      <span class="brand-badge">Honda</span>
+      <span class="brand-badge">Bajaj</span>
+      <span class="brand-badge">KTM</span>
+      <span class="brand-badge">Royal Enfield</span>
+      <span class="brand-badge">Yamaha</span>
+      <span class="brand-badge">TVS</span>
+      <span class="brand-badge">Suzuki</span>
+      <span class="brand-badge">Kawasaki</span>
+      <span class="brand-badge">Ducati</span>
+      <span class="brand-badge">BMW</span>
+      <span class="brand-badge">Harley-Davidson</span>
+      <span class="brand-badge">Jawa</span>
+      <span class="brand-badge">Mahindra</span>
+      <span class="brand-badge">Vespa</span>
+      <span class="brand-badge">Triumph</span>
+      <span class="brand-badge">OLA Electric</span>
+      <span class="brand-badge">Ather</span>
+    </div>
+    <h5 class="mt-5 text-center" style="color: var(--primary);">Bicycle Brands</h5>
+    <div class="brands-strip mt-3">
+      <span class="brand-badge brand-bicycle">BTWIN</span>
+      <span class="brand-badge brand-bicycle">Rockrider</span>
+      <span class="brand-badge brand-bicycle">Hercules</span>
+      <span class="brand-badge brand-bicycle">Hero Cycles</span>
+      <span class="brand-badge brand-bicycle">Firefox</span>
+      <span class="brand-badge brand-bicycle">Trek</span>
+      <span class="brand-badge brand-bicycle">Cannondale</span>
+      <span class="brand-badge brand-bicycle">BSA</span>
+      <span class="brand-badge brand-bicycle">Montra</span>
+      <span class="brand-badge brand-bicycle">Scott</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUICK BOOK FORM ==================== -->
+<section class="section-dark" id="quick-book">
+  <div class="container">
+    <h2 class="section-title">Quick <span class="text-gradient">Book</span></h2>
+    <p class="section-subtitle">Book your service in seconds</p>
+    <div class="quick-book-card glass">
+      <div class="row g-3 align-items-end">
+        <div class="col-md-3">
+          <label class="form-label text-light">Select Brand</label>
+          <select class="wow-select form-select" (change)="onSelect($event)">
+            <option value="" selected disabled>-- Choose Brand --</option>
+            <option *ngFor="let b of brand" [value]="b.id">{{b.name}}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label text-light">Select Model</label>
+          <select class="wow-select form-select">
+            <option value="" selected disabled>-- Choose Model --</option>
+            <option *ngFor="let m of Modal" [value]="m.name">{{m.name}}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label text-light">Select City</label>
+          <select class="wow-select form-select">
+            <option value="" selected disabled>-- Choose City --</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="bangalore">Bangalore</option>
+            <option value="chennai">Chennai</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="delhi">Delhi</option>
+            <option value="pune">Pune</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <a routerLink="/premium" class="btn btn-wow-primary w-100 btn-lg"><i class="fas fa-calendar-check me-2"></i>Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ SECTION ==================== -->
+<section class="section-darker" id="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+    <p class="section-subtitle">Got questions? We've got answers</p>
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq1" class="faq-toggle">
+        <label for="faq1" class="faq-question">
+          <span class="faq-num">01</span>
+          <span>What types of vehicles do you service?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </label>
+        <div class="faq-answer">
+          <p>We service all types of two-wheelers including motorcycles, scooters, mopeds, and bicycles. We cover all major brands like Hero, Honda, Bajaj, KTM, Royal Enfield, Yamaha, TVS, Suzuki, Kawasaki, Ducati, BMW, and more.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq2" class="faq-toggle">
+        <label for="faq2" class="faq-question">
+          <span class="faq-num">02</span>
+          <span>How does doorstep service work?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </label>
+        <div class="faq-answer">
+          <p>Simply book online by selecting your vehicle, preferred date and time. Our certified mechanic will arrive at your doorstep with all necessary tools and genuine spare parts to service your vehicle right there.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq3" class="faq-toggle">
+        <label for="faq3" class="faq-question">
+          <span class="faq-num">03</span>
+          <span>Do you offer any warranty on services?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </label>
+        <div class="faq-answer">
+          <p>Yes! Every service comes with a 6-month warranty covering both parts and labor. If you face any issues related to our service within the warranty period, we'll fix it at no extra cost.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq4" class="faq-toggle">
+        <label for="faq4" class="faq-question">
+          <span class="faq-num">04</span>
+          <span>How long does a typical service take?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </label>
+        <div class="faq-answer">
+          <p>Standard services typically take 2-3 hours. Premium services may take 3-4 hours. Advanced services that require station work could take 1-2 days depending on the complexity. We always provide estimated completion times upfront.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq5" class="faq-toggle">
+        <label for="faq5" class="faq-question">
+          <span class="faq-num">05</span>
+          <span>What areas do you serve in Hyderabad?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </label>
+        <div class="faq-answer">
+          <p>We cover all major areas including Gachibowli, Madhapur, LB Nagar, Attapur, Mehdipatnam, Nagole, Uppal, Secunderabad, Kukatpally, JNTU, Bachupally, Dilsukhnagar, Kondapur, Lingampally, and many more locations across Hyderabad.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICE LOCATIONS ==================== -->
+<section class="section-dark" id="locations">
+  <div class="container">
+    <h2 class="section-title">Service <span class="text-gradient">Locations</span></h2>
+    <p class="section-subtitle">Serving across Hyderabad and beyond</p>
+    <div class="locations-grid">
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Gachibowli</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Madhapur</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>LB Nagar</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Attapur</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Mehdipatnam</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Bandlaguda</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Nagole</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Uppal</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Secunderabad</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Kukatpally</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>JNTU</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Bachupally</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Mallapur</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Moulali</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>ECIL</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>RTC X Road</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Lakdi Ka Pool</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Shamshabad</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Dilsukhnagar</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Kondapur</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Lingampally</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Gandipet</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Narsingi</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Gatkesar</span>
+    </div>
+  </div>
+</section>
