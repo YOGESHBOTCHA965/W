@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     const result = this.service.loginUser(loginForm.emailId, loginForm.password);
 
     if (result.success) {
-      this.toastr.success('Welcome back, ' + result.user!.firstName + '!', 'Login Successful');
+      this.toastr.success('Welcome, ' + result.user!.firstName + '!', 'Login Successful');
       this.router.navigate(['home']);
     } else {
       this.loginError = result.message;
