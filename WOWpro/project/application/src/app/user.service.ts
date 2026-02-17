@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { tap, map, catchError } from 'rxjs/operators';
 import { TokenService } from './token.service';
+import { environment } from '../environments/environment';
 
 export interface WowUser {
   _id?: string;
@@ -35,7 +36,8 @@ export interface ApiResponse {
 export class UserService {
 
   private readonly CURRENT_USER_KEY = 'wow_current_user';
-  private readonly API_URL = '/api/auth';
+  private readonly API_URL = environment.apiUrl + '/api/auth';
+  private readonly BASE_URL = environment.apiUrl;
 
   isUserLogged: boolean;
   loginStatus: BehaviorSubject<boolean>;
@@ -176,95 +178,95 @@ export class UserService {
   // ═══════ Booking API helpers ═══════
 
   createBooking(booking: any): Observable<any> {
-    return this.http.post('/api/booking', booking);
+    return this.http.post(`${this.BASE_URL}/api/booking`, booking);
   }
 
   getMyBookings(): Observable<any> {
-    return this.http.get('/api/booking');
+    return this.http.get(`${this.BASE_URL}/api/booking`);
   }
 
   // ═══════ Payment API helpers ═══════
 
   processPayment(bookingId: string, paymentMethod: string): Observable<any> {
-    return this.http.post('/api/payment/process', { bookingId, paymentMethod });
+    return this.http.post(`${this.BASE_URL}/api/payment/process`, { bookingId, paymentMethod });
   }
 
   skipPayment(bookingId: string): Observable<any> {
-    return this.http.post('/api/payment/skip', { bookingId });
+    return this.http.post(`${this.BASE_URL}/api/payment/skip`, { bookingId });
   }
 
   // ═══════ Review API helpers ═══════
 
   submitReview(review: { bookingId: string; rating: number; comment: string }): Observable<any> {
-    return this.http.post('/api/review', review);
+    return this.http.post(`${this.BASE_URL}/api/review`, review);
   }
 
   getMyReviews(): Observable<any> {
-    return this.http.get('/api/review/my');
+    return this.http.get(`${this.BASE_URL}/api/review/my`);
   }
 
   getPublicReviews(): Observable<any> {
-    return this.http.get('/api/review/public');
+    return this.http.get(`${this.BASE_URL}/api/review/public`);
   }
 
   getReviewStats(): Observable<any> {
-    return this.http.get('/api/review/stats');
+    return this.http.get(`${this.BASE_URL}/api/review/stats`);
   }
 
   // ═══════ Referral & Loyalty API helpers ═══════
 
   getMyReferral(): Observable<any> {
-    return this.http.get('/api/referral/my');
+    return this.http.get(`${this.BASE_URL}/api/referral/my`);
   }
 
   applyReferralCode(referralCode: string): Observable<any> {
-    return this.http.post('/api/referral/apply', { referralCode });
+    return this.http.post(`${this.BASE_URL}/api/referral/apply`, { referralCode });
   }
 
   getReferralLeaderboard(): Observable<any> {
-    return this.http.get('/api/referral/leaderboard');
+    return this.http.get(`${this.BASE_URL}/api/referral/leaderboard`);
   }
 
   // ═══════ Subscription API helpers ═══════
 
   getSubscriptionPlans(): Observable<any> {
-    return this.http.get('/api/subscription/plans');
+    return this.http.get(`${this.BASE_URL}/api/subscription/plans`);
   }
 
   subscribeToPlan(plan: string): Observable<any> {
-    return this.http.post('/api/subscription/subscribe', { plan });
+    return this.http.post(`${this.BASE_URL}/api/subscription/subscribe`, { plan });
   }
 
   getMySubscription(): Observable<any> {
-    return this.http.get('/api/subscription/my');
+    return this.http.get(`${this.BASE_URL}/api/subscription/my`);
   }
 
   cancelSubscription(): Observable<any> {
-    return this.http.post('/api/subscription/cancel', {});
+    return this.http.post(`${this.BASE_URL}/api/subscription/cancel`, {});
   }
 
   // ═══════ Waitlist API helpers ═══════
 
   joinWaitlist(data: { email: string; city: string; name?: string }): Observable<any> {
-    return this.http.post('/api/waitlist/join', data);
+    return this.http.post(`${this.BASE_URL}/api/waitlist/join`, data);
   }
 
   getWaitlistCounts(): Observable<any> {
-    return this.http.get('/api/waitlist/count');
+    return this.http.get(`${this.BASE_URL}/api/waitlist/count`);
   }
 
   // ═══════ SOS & Tracking API helpers ═══════
 
   createSOSBooking(data: { vehicleType: string; address: string; brand?: string; model?: string; notes?: string; contactNo?: string }): Observable<any> {
-    return this.http.post('/api/booking/sos', data);
+    return this.http.post(`${this.BASE_URL}/api/booking/sos`, data);
   }
 
   cancelBooking(bookingId: string): Observable<any> {
-    return this.http.patch(`/api/booking/${bookingId}/cancel`, {});
+    return this.http.patch(`${this.BASE_URL}/api/booking/${bookingId}/cancel`, {});
   }
 
   trackBooking(bookingId: string): Observable<any> {
-    return this.http.get(`/api/booking/${bookingId}/track`);
+    return this.http.get(`${this.BASE_URL}/api/booking/${bookingId}/track`);
   }
 
   // ═══════ Price Calculator (client-side) ═══════

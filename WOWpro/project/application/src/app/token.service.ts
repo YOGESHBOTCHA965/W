@@ -12,6 +12,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +51,6 @@ export class TokenService {
    * Called by JwtInterceptor when a 401 TOKEN_EXPIRED is received.
    */
   refreshAccessToken(refreshToken: string): Observable<any> {
-    return this.http.post('/api/auth/refresh', { refreshToken });
+    return this.http.post(`${environment.apiUrl}/api/auth/refresh`, { refreshToken });
   }
 }
