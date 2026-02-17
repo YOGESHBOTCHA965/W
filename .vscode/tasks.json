@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "WOW Backend Server",
+			"type": "shell",
+			"command": "cd \"c:\\Users\\yoges\\Desktop\\Wow Project\\WOWpro\\project\\server\" && node server.js",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "WOW Backend Server",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\yoges\\Desktop\\Wow Project\\WOWpro\\project\\server'; node server.js",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

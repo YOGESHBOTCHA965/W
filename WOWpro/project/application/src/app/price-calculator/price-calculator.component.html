@@ -1,0 +1,96 @@
+<section class="section-dark page-section">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-calculator me-2"></i>Price <span class="text-gradient">Calculator</span></h2>
+    <p class="section-subtitle">Get an instant estimate for your service. No hidden costs!</p>
+
+    <div class="calculator-grid">
+      <!-- Left: Options -->
+      <div class="calc-options glass">
+        <!-- Vehicle Type -->
+        <div class="option-group">
+          <h4 class="option-label"><i class="fas fa-motorcycle me-2"></i>Vehicle Type</h4>
+          <div class="toggle-group">
+            <button class="toggle-btn" [class.active]="vehicleType === 'bike'" (click)="vehicleType = 'bike'; onVehicleChange()">
+              <i class="fas fa-motorcycle"></i> Bike
+            </button>
+            <button class="toggle-btn" [class.active]="vehicleType === 'bicycle'" (click)="vehicleType = 'bicycle'; onVehicleChange()">
+              <i class="fas fa-bicycle"></i> Bicycle
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Plan -->
+        <div class="option-group">
+          <h4 class="option-label"><i class="fas fa-layer-group me-2"></i>Service Plan</h4>
+          <div class="plan-options">
+            <button class="plan-btn" [class.active]="servicePlan === 'standard'" (click)="servicePlan = 'standard'; onPlanChange()">
+              <i class="fas fa-wrench"></i>
+              <span>Standard</span>
+              <small>Basic care</small>
+            </button>
+            <button class="plan-btn plan-premium" [class.active]="servicePlan === 'premium'" (click)="servicePlan = 'premium'; onPlanChange()">
+              <i class="fas fa-star"></i>
+              <span>Premium</span>
+              <small>Full service</small>
+            </button>
+            <button class="plan-btn plan-pro" [class.active]="servicePlan === 'pro'" (click)="servicePlan = 'pro'; onPlanChange()">
+              <i class="fas fa-crown"></i>
+              <span>Pro</span>
+              <small>Complete overhaul</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- Additional Issues -->
+        <div class="option-group">
+          <h4 class="option-label"><i class="fas fa-wrench me-2"></i>Additional Issues (optional)</h4>
+          <div class="issues-grid">
+            <button *ngFor="let issue of issues" class="issue-btn" [class.active]="isSelected(issue.id)"
+                    (click)="toggleIssue(issue.id)">
+              <i [class]="issue.icon"></i>
+              <span>{{ issue.label }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Price Summary -->
+      <div class="calc-result glass">
+        <h4 class="result-title"><i class="fas fa-receipt me-2"></i>Estimated Price</h4>
+
+        <div *ngIf="result" class="price-breakdown">
+          <div class="price-row">
+            <span>Base Service ({{ servicePlan }})</span>
+            <span class="price">${{ result.base }}</span>
+          </div>
+          <div class="price-row" *ngIf="result.extras > 0">
+            <span>Additional Repairs</span>
+            <span class="price">${{ result.extras }}</span>
+          </div>
+          <div class="price-row discount" *ngIf="result.discount > 0">
+            <span><i class="fas fa-tag me-1"></i>Bulk Discount (10%)</span>
+            <span class="price">-${{ result.discount }}</span>
+          </div>
+          <div class="price-total">
+            <span>Total Estimate</span>
+            <span class="total-price">${{ result.total }}</span>
+          </div>
+        </div>
+
+        <div *ngIf="!result" class="no-result">
+          <i class="fas fa-hand-pointer"></i>
+          <p>Select your options to see real-time pricing</p>
+        </div>
+
+        <a routerLink="/premium" class="btn btn-wow-primary w-100 mt-4">
+          <i class="fas fa-calendar-check me-2"></i>Book This Service
+        </a>
+
+        <div class="price-note">
+          <i class="fas fa-info-circle me-1"></i>
+          Final price may vary based on parts required. No hidden charges guaranteed.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

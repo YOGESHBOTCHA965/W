@@ -1,0 +1,157 @@
+<section class="payment-page">
+  <!-- Background -->
+  <div class="bg-decoration">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+  </div>
+
+  <div class="container">
+    <h1 class="section-title">Secure <span class="text-gradient">Payment</span></h1>
+    <p class="section-subtitle">Complete your booking with a secure payment</p>
+
+    <!-- TEST MODE BANNER -->
+    <div class="test-mode-banner">
+      <i class="fas fa-flask"></i>
+      <div>
+        <strong>TEST MODE ACTIVE</strong>
+        <p>This is a test payment page. No real charges will be made. You can proceed without entering card details.</p>
+      </div>
+    </div>
+
+    <div class="payment-grid">
+      <!-- PAYMENT FORM -->
+      <div class="payment-form-card">
+        <h3 class="form-title"><i class="fas fa-credit-card me-2"></i> Card Details</h3>
+
+        <!-- Card Number -->
+        <div class="form-group">
+          <label class="form-label">Card Number</label>
+          <div class="card-input-wrapper">
+            <i class="fas fa-credit-card input-icon"></i>
+            <input type="text" class="wow-input card-input" placeholder="1234 5678 9012 3456"
+              [(ngModel)]="cardNumber" maxlength="19" />
+          </div>
+        </div>
+
+        <!-- Card Name -->
+        <div class="form-group">
+          <label class="form-label">Cardholder Name</label>
+          <div class="card-input-wrapper">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" class="wow-input card-input" placeholder="John Doe"
+              [(ngModel)]="cardName" />
+          </div>
+        </div>
+
+        <!-- Expiry & CVV -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Expiry Date</label>
+            <div class="card-input-wrapper">
+              <i class="fas fa-calendar input-icon"></i>
+              <input type="text" class="wow-input card-input" placeholder="MM/YY"
+                [(ngModel)]="cardExpiry" maxlength="5" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">CVV</label>
+            <div class="card-input-wrapper">
+              <i class="fas fa-lock input-icon"></i>
+              <input type="password" class="wow-input card-input" placeholder="•••"
+                [(ngModel)]="cardCvv" maxlength="4" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Providers -->
+        <div class="card-providers">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-cc-discover"></i>
+        </div>
+
+        <!-- Pay Button -->
+        <button class="btn btn-wow-primary w-100 btn-pay" (click)="processPayment()" [disabled]="processing">
+          <span *ngIf="!processing">
+            <i class="fas fa-lock me-2"></i> Pay {{ planPrice }} Securely
+          </span>
+          <span *ngIf="processing" class="processing-state">
+            <i class="fas fa-spinner fa-spin me-2"></i> Processing...
+          </span>
+        </button>
+
+        <!-- Skip Button (Test Mode) -->
+        <button class="btn btn-skip" (click)="skipPayment()">
+          <i class="fas fa-forward me-2"></i> Skip Payment (Test Mode)
+        </button>
+
+        <!-- Security Info -->
+        <div class="security-info">
+          <i class="fas fa-shield-alt"></i>
+          <span>Your payment information is encrypted and secure</span>
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY -->
+      <div class="order-summary-card">
+        <h3 class="summary-title"><i class="fas fa-receipt me-2"></i> Order Summary</h3>
+
+        <div class="summary-user" *ngIf="userName">
+          <i class="fas fa-user-circle"></i>
+          <span>{{ userName }}</span>
+        </div>
+
+        <div class="summary-items">
+          <div class="summary-item">
+            <span class="item-name">{{ selectedPlan }}</span>
+            <span class="item-price">{{ planPrice }}</span>
+          </div>
+          <div class="summary-item">
+            <span class="item-name">Doorstep Visit Charge</span>
+            <span class="item-price free">FREE</span>
+          </div>
+          <div class="summary-item">
+            <span class="item-name">GST (18%)</span>
+            <span class="item-price">Included</span>
+          </div>
+        </div>
+
+        <div class="summary-total">
+          <span>Total</span>
+          <span class="total-price">{{ planPrice }}</span>
+        </div>
+
+        <div class="summary-benefits">
+          <h5><i class="fas fa-gift me-2"></i> Included Benefits</h5>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> 6-Month Service Warranty</li>
+            <li><i class="fas fa-check-circle"></i> Genuine OEM Parts</li>
+            <li><i class="fas fa-check-circle"></i> Certified Mechanic</li>
+            <li><i class="fas fa-check-circle"></i> 24/7 Customer Support</li>
+          </ul>
+        </div>
+
+        <!-- 3D Secure Card Visual -->
+        <div class="card-3d-visual">
+          <div class="card-3d">
+            <div class="card-3d-front">
+              <div class="card-3d-chip"></div>
+              <div class="card-3d-number">•••• •••• •••• ••••</div>
+              <div class="card-3d-info">
+                <div>
+                  <span class="card-3d-label">CARDHOLDER</span>
+                  <span class="card-3d-value">{{ cardName || 'YOUR NAME' }}</span>
+                </div>
+                <div>
+                  <span class="card-3d-label">EXPIRES</span>
+                  <span class="card-3d-value">{{ cardExpiry || 'MM/YY' }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

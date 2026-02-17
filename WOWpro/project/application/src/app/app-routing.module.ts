@@ -16,10 +16,22 @@ import { TermsComponent } from './terms/terms.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { SlotComponent } from './slot/slot.component';
 import { LogoutComponent } from './logout/logout.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ServiceHistoryComponent } from './service-history/service-history.component';
+import { PriceCalculatorComponent } from './price-calculator/price-calculator.component';
+import { ReferralComponent } from './referral/referral.component';
+import { EmergencySosComponent } from './emergency-sos/emergency-sos.component';
+import { BlogComponent } from './blog/blog.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
+  // Public pages (accessible to everyone)
   { path: '', component: WelcomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
@@ -31,9 +43,22 @@ const routes: Routes = [
   { path: 'pro', component: ProComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'terms', component: TermsComponent },
-  { path: 'thankyou', component: ThankyouComponent },
-  { path: 'slot', component: SlotComponent },
   { path: 'logout', component: LogoutComponent },
+
+  // Public feature pages
+  { path: 'price-calculator', component: PriceCalculatorComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'reviews', component: ReviewsComponent },
+  { path: 'subscription', component: SubscriptionComponent },
+
+  // Protected pages (require login)
+  { path: 'slot', component: SlotComponent, canActivate: [AuthGuard] },
+  { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
+  { path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard] },
+  { path: 'service-history', component: ServiceHistoryComponent, canActivate: [AuthGuard] },
+  { path: 'referral', component: ReferralComponent, canActivate: [AuthGuard] },
+  { path: 'sos', component: EmergencySosComponent, canActivate: [AuthGuard] },
+
   { path: '**', redirectTo: '' }
 ];
 

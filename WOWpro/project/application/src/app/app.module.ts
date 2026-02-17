@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 //import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 // import { RegisterAsProfessionalComponent } from './register-as-professional/register-as-professional.component';
 // import { HelpComponent } from './help/help.component';
@@ -37,6 +37,16 @@ import { LogoutComponent } from './logout/logout.component';
 
 import { ShowUserComponent } from './show-user/show-user.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { JwtInterceptor } from './jwt.interceptor';
+import { ServiceHistoryComponent } from './service-history/service-history.component';
+import { PriceCalculatorComponent } from './price-calculator/price-calculator.component';
+import { ReferralComponent } from './referral/referral.component';
+import { EmergencySosComponent } from './emergency-sos/emergency-sos.component';
+import { BlogComponent } from './blog/blog.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 // import { ChatComponent } from './chat/chat.component';
 @NgModule({
   declarations: [
@@ -63,6 +73,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
     ShowUserComponent,
      WelcomeComponent,
+    PaymentComponent,
+    ForgotPasswordComponent,
+    ServiceHistoryComponent,
+    PriceCalculatorComponent,
+    ReferralComponent,
+    EmergencySosComponent,
+    BlogComponent,
+    SubscriptionComponent,
+    ReviewsComponent,
     // ChatComponent
     
   ],
@@ -77,6 +96,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
     SocialLoginModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

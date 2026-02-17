@@ -9,6 +9,7 @@ import { UserService } from '../user.service';
 export class HeaderComponent implements OnInit {
   loginStatus: any;
   mobileMenuOpen = false;
+  userMenuOpen = false;
 
   constructor(private userService: UserService) {}
 
@@ -32,5 +33,9 @@ export class HeaderComponent implements OnInit {
 
   closeMobileMenu(): void {
     this.mobileMenuOpen = false;
+  }
+
+  toggleUserMenu(): void {
+    this.userMenuOpen = !this.userMenuOpen;
   }
 }

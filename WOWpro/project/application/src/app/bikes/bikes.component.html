@@ -1,29 +1,111 @@
 ﻿<!-- ==================== HERO SECTION ==================== -->
 <section class="hero-section">
   <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <h1 class="hero-title animate-fadeInUp">
-      Motorcycle <span class="text-gradient">Service &amp; Repair</span>
-    </h1>
-    <p class="hero-subtitle animate-fadeInUp">
-      Expert doorstep bike service by certified mechanics. From periodic maintenance to engine overhauls &mdash; we bring the garage to you.
-    </p>
-    <div class="hero-buttons animate-fadeInUp">
-      <a routerLink="/premium" class="btn btn-wow-primary me-3">Book Service</a>
-      <a routerLink="/contact-us" class="btn btn-wow">Contact Us</a>
+  <div class="container hero-content-grid">
+    <div class="hero-text">
+      <h1 class="hero-title animate-fadeInUp">
+        Motorcycle <span class="text-gradient">Service &amp; Repair</span>
+      </h1>
+      <p class="hero-subtitle animate-fadeInUp">
+        Expert doorstep motorbike service by certified mechanics. From periodic maintenance to engine overhauls, we bring the garage to you.
+      </p>
+      <div class="hero-buttons animate-fadeInUp">
+        <a routerLink="/premium" class="btn btn-wow-primary me-3">Book Service</a>
+        <a routerLink="/contact-us" class="btn btn-wow">Contact Us</a>
+      </div>
+      <div class="hero-stats animate-fadeInUp">
+        <div class="stat-item">
+          <span class="stat-number">15K+</span>
+          <span class="stat-label">Motorbikes Serviced</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Expert Mechanics</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.8&#9733;</span>
+          <span class="stat-label">Customer Rating</span>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats animate-fadeInUp">
-      <div class="stat-item">
-        <span class="stat-number">15K+</span>
-        <span class="stat-label">Bikes Serviced</span>
+
+    <!-- 3D Mechanic Visual -->
+    <div class="hero-3d-visual animate-fadeInUp">
+      <div class="scene-3d">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <!-- Motorcycle 3D Icon Composition -->
+        <div class="vehicle-display">
+          <div class="vehicle-icon-main">
+            <i class="fas fa-motorcycle"></i>
+          </div>
+          <div class="vehicle-ring"></div>
+          <div class="vehicle-ring ring-2"></div>
+        </div>
+        <!-- Floating Service Cards -->
+        <div class="float-service-card card-pos-1">
+          <i class="fas fa-wrench"></i>
+          <span>Expert Repair</span>
+        </div>
+        <div class="float-service-card card-pos-2">
+          <i class="fas fa-oil-can"></i>
+          <span>Oil Change</span>
+        </div>
+        <div class="float-service-card card-pos-3">
+          <i class="fas fa-cogs"></i>
+          <span>Engine Tuning</span>
+        </div>
+        <!-- Mechanic Badge -->
+        <div class="mechanic-badge">
+          <div class="mechanic-avatar">
+            <i class="fas fa-user-cog"></i>
+          </div>
+          <div class="mechanic-info">
+            <span class="mechanic-name">Certified Pro</span>
+            <span class="mechanic-rating"><i class="fas fa-star"></i> 4.9</span>
+          </div>
+        </div>
       </div>
-      <div class="stat-item">
-        <span class="stat-number">50+</span>
-        <span class="stat-label">Expert Mechanics</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FEATURED BRANDS SHOWCASE ==================== -->
+<section class="section-darker">
+  <div class="container">
+    <h2 class="section-title">Featured <span class="text-gradient">Brands We Service</span></h2>
+    <p class="section-subtitle">Trusted by riders of the world&rsquo;s top motorcycle brands</p>
+
+    <div class="brands-showcase-grid">
+      <div class="brand-3d-card">
+        <div class="brand-3d-icon"><i class="fas fa-motorcycle"></i></div>
+        <h4>Harley-Davidson</h4>
+        <p>Premium cruiser service &amp; maintenance</p>
       </div>
-      <div class="stat-item">
-        <span class="stat-number">4.8&#9733;</span>
-        <span class="stat-label">Customer Rating</span>
+      <div class="brand-3d-card">
+        <div class="brand-3d-icon"><i class="fas fa-motorcycle"></i></div>
+        <h4>Indian Motorcycle</h4>
+        <p>Classic American cruiser specialists</p>
+      </div>
+      <div class="brand-3d-card">
+        <div class="brand-3d-icon"><i class="fas fa-motorcycle"></i></div>
+        <h4>Honda</h4>
+        <p>Sport, touring &amp; adventure bike experts</p>
+      </div>
+      <div class="brand-3d-card">
+        <div class="brand-3d-icon"><i class="fas fa-motorcycle"></i></div>
+        <h4>Yamaha</h4>
+        <p>Sport &amp; cruiser precision tuning</p>
+      </div>
+      <div class="brand-3d-card">
+        <div class="brand-3d-icon"><i class="fas fa-motorcycle"></i></div>
+        <h4>Kawasaki</h4>
+        <p>Ninja &amp; Z series performance service</p>
+      </div>
+      <div class="brand-3d-card">
+        <div class="brand-3d-icon"><i class="fas fa-motorcycle"></i></div>
+        <h4>BMW Motorrad</h4>
+        <p>German engineering excellence</p>
       </div>
     </div>
   </div>
@@ -33,7 +115,7 @@
 <section class="section-dark">
   <div class="container">
     <h2 class="section-title">Our <span class="text-gradient">Service Categories</span></h2>
-    <p class="section-subtitle">Comprehensive motorcycle care &mdash; all at your doorstep</p>
+    <p class="section-subtitle">Comprehensive motorcycle care, all at your doorstep</p>
 
     <div class="service-grid">
       <div class="service-card">
@@ -45,7 +127,7 @@
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-car-crash"></i></div>
         <h4>Accidental Repair</h4>
-        <p>Complete accidental damage repair &mdash; dent fixing, painting, part replacements &amp; structural restoration by experts.</p>
+        <p>Complete accidental damage repair with dent fixing, painting, part replacements &amp; structural restoration by experts.</p>
       </div>
 
       <div class="service-card">
@@ -57,7 +139,7 @@
       <div class="service-card">
         <div class="service-icon"><i class="fas fa-circle-notch"></i></div>
         <h4>Tyres at Home</h4>
-        <p>Tyre replacement, puncture repair, wheel balancing &amp; alignment &mdash; all done at your doorstep with premium quality tyres.</p>
+        <p>Tyre replacement, puncture repair, wheel balancing &amp; alignment, all done at your doorstep with premium quality tyres.</p>
       </div>
 
       <div class="service-card">
@@ -73,7 +155,7 @@
 <section class="section-darker">
   <div class="container">
     <h2 class="section-title">Quick <span class="text-gradient">Book</span></h2>
-    <p class="section-subtitle">Select your bike details and book a service in seconds</p>
+    <p class="section-subtitle">Select your motorbike details and book a service in seconds</p>
 
     <div class="quick-book-card">
       <div class="row g-4 align-items-end">
@@ -94,25 +176,25 @@
         </div>
 
         <div class="col-md-3">
-          <label class="form-label">Select City</label>
+          <label class="form-label">Select Area</label>
           <select class="wow-select">
-            <option value="">Select City</option>
-            <option>Gachibowli</option>
-            <option>Madhapur</option>
-            <option>Kondapur</option>
-            <option>Kukatpally</option>
-            <option>LB Nagar</option>
-            <option>Attapur</option>
-            <option>Mehdipatnam</option>
-            <option>Nagole</option>
-            <option>Uppal</option>
-            <option>Secunderabad</option>
-            <option>JNTU</option>
-            <option>Bachupally</option>
-            <option>Dilsukhnagar</option>
-            <option>Shamshabad</option>
-            <option>Lingampally</option>
-            <option>ECIL</option>
+            <option value="">Select Area</option>
+            <option>Midtown</option>
+            <option>Northside</option>
+            <option>South Columbus</option>
+            <option>Wynnton</option>
+            <option>Green Island Hills</option>
+            <option>Fort Benning</option>
+            <option>Phenix City</option>
+            <option>Bibb City</option>
+            <option>Edgewood</option>
+            <option>Gentian</option>
+            <option>Cusseta Road</option>
+            <option>Hamilton</option>
+            <option>Opelika</option>
+            <option>Auburn</option>
+            <option>Smiths Station</option>
+            <option>LaGrange</option>
           </select>
         </div>
 
@@ -127,8 +209,8 @@
 <!-- ==================== WHY CHOOSE WOW ==================== -->
 <section class="section-dark">
   <div class="container">
-    <h2 class="section-title">Why Choose <span class="text-gradient">WOW for Bikes?</span></h2>
-    <p class="section-subtitle">We deliver more than just service &mdash; we deliver trust</p>
+    <h2 class="section-title">Why Choose <span class="text-gradient">WOW for Motorbikes?</span></h2>
+    <p class="section-subtitle">We deliver more than just service, we deliver trust</p>
 
     <div class="benefits-grid">
       <div class="benefit-card">

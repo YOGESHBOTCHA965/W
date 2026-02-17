@@ -12,9 +12,13 @@ export class LogoutComponent implements OnInit {
   constructor(private service: UserService, private router: Router) {}
 
   ngOnInit() {
-    this.service.setUserLogout();
-    setTimeout(() => {
-      this.router.navigate(['/']);
-    }, 1500);
+    this.service.logoutUser().subscribe({
+      next: () => {
+        setTimeout(() => this.router.navigate(['/']), 1500);
+      },
+      error: () => {
+        setTimeout(() => this.router.navigate(['/']), 1500);
+      }
+    });
   }
 }

@@ -1,0 +1,101 @@
+<section class="section-dark page-section">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-id-badge me-2"></i>Subscription <span class="text-gradient">Plans</span></h2>
+    <p class="section-subtitle">Save big with monthly or annual service subscriptions</p>
+
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary"></div>
+    </div>
+
+    <!-- Current Subscription -->
+    <div *ngIf="!loading && currentSub" class="current-sub glass">
+      <div class="sub-header">
+        <div>
+          <h4><i class="fas fa-check-circle me-2 text-success"></i>Active Subscription</h4>
+          <p class="sub-plan-name">{{ currentSub.plan | titlecase }}</p>
+        </div>
+        <div class="sub-badge active">Active</div>
+      </div>
+      <div class="sub-details">
+        <div class="sub-detail">
+          <span class="label">Discount</span>
+          <span class="value">{{ currentSub.discount }}% off all bookings</span>
+        </div>
+        <div class="sub-detail">
+          <span class="label">Services Used</span>
+          <span class="value">{{ currentSub.servicesUsed }} / {{ currentSub.servicesIncluded }}</span>
+        </div>
+        <div class="sub-detail">
+          <span class="label">Days Remaining</span>
+          <span class="value">{{ getDaysRemaining() }} days</span>
+        </div>
+        <div class="sub-detail">
+          <span class="label">Valid Until</span>
+          <span class="value">{{ currentSub.endDate | date:'mediumDate' }}</span>
+        </div>
+      </div>
+      <button class="btn-cancel-sub" (click)="cancelSub()">
+        <i class="fas fa-times me-2"></i>Cancel Subscription
+      </button>
+    </div>
+
+    <!-- Alert Message -->
+    <div *ngIf="message" class="alert-msg" [ngClass]="messageType">
+      <i [class]="messageType === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle'"></i>
+      {{ message }}
+    </div>
+
+    <!-- Plans Grid -->
+    <div *ngIf="!loading" class="plans-grid">
+      <div *ngFor="let plan of plans" class="sub-plan-card glass" [class.popular]="isPopular(plan.id)">
+        <div *ngIf="isPopular(plan.id)" class="popular-tag">Most Popular</div>
+        <div class="plan-icon"><i [class]="getPlanIcon(plan.id)"></i></div>
+        <h3 class="plan-name">{{ plan.name }}</h3>
+        <div class="plan-price">
+          <span class="currency">$</span>
+          <span class="amount">{{ plan.price }}</span>
+          <span class="period">/ {{ plan.duration === 30 ? 'month' : 'year' }}</span>
+        </div>
+        <div class="plan-discount">
+          <i class="fas fa-tag me-1"></i>{{ plan.discount }}% off all bookings
+        </div>
+        <ul class="plan-features">
+          <li *ngFor="let f of plan.features">
+            <i class="fas fa-check me-2"></i>{{ f }}
+          </li>
+        </ul>
+        <button class="btn-subscribe" [class.btn-popular]="isPopular(plan.id)"
+                (click)="subscribe(plan.id)" [disabled]="subscribing || currentSub">
+          <i class="fas fa-rocket me-2"></i>{{ currentSub ? 'Already Subscribed' : 'Subscribe Now' }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="benefits-section">
+      <h3 class="section-title">Why <span class="text-gradient">Subscribe?</span></h3>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <i class="fas fa-piggy-bank"></i>
+          <h5>Save Up to 30%</h5>
+          <p>Annual Pro members save up to $1,500/year on services</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-bolt"></i>
+          <h5>Priority Booking</h5>
+          <p>Subscribers get next-day slots guaranteed, no waiting</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-truck"></i>
+          <h5>Free Pickup & Drop</h5>
+          <p>Pro subscribers enjoy complimentary vehicle pickup & delivery</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-undo"></i>
+          <h5>Cancel Anytime</h5>
+          <p>No lock-in. Cancel your subscription whenever you want</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

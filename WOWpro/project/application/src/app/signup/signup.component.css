@@ -199,6 +199,131 @@
   text-decoration: underline;
 }
 
+/* ===== Password Policy Checklist ===== */
+.password-policy {
+  margin-top: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.policy-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--primary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.policy-header i {
+  font-size: 14px;
+}
+
+.strength-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.strength-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease, background 0.4s ease;
+}
+
+.strength-label {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  min-width: 80px;
+  text-align: right;
+}
+
+.policy-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.policy-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+}
+
+.policy-item i {
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.policy-item.met {
+  color: #2ECC71;
+}
+
+.policy-item.met i {
+  color: #2ECC71;
+}
+
+/* Security Question Section */
+.security-question-section {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 8px;
+}
+
+.security-header {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.security-hint {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--gray-500);
+}
+
+.security-question-section .form-group {
+  margin-bottom: 14px;
+}
+
+.security-question-section .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.security-question-section select.wow-input {
+  appearance: auto;
+  cursor: pointer;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 576px) {
   .signup-card {

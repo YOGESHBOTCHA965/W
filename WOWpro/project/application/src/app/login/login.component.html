@@ -28,21 +28,21 @@
           </label>
           <input
             class="wow-input"
-            type="text"
+            type="email"
             id="emailId"
             name="emailId"
             ngModel
             placeholder="Enter your email"
             #emailId="ngModel"
             required
-            minlength="2"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
             maxlength="80"
           />
           <div class="validation-msg" *ngIf="emailId.errors?.['required'] && emailId.touched">
             <i class="fas fa-exclamation-circle"></i> Email is required
           </div>
-          <div class="validation-msg" *ngIf="emailId.errors?.['minlength'] && emailId.touched">
-            <i class="fas fa-exclamation-circle"></i> Enter at least 2 characters
+          <div class="validation-msg" *ngIf="emailId.errors?.['pattern'] && emailId.touched">
+            <i class="fas fa-exclamation-circle"></i> Enter a valid email address
           </div>
         </div>
 
@@ -60,15 +60,20 @@
             placeholder="Enter your password"
             #password="ngModel"
             required
-            minlength="2"
-            maxlength="15"
+            minlength="8"
+            maxlength="50"
           />
           <div class="validation-msg" *ngIf="password.errors?.['required'] && password.touched">
             <i class="fas fa-exclamation-circle"></i> Password is required
           </div>
           <div class="validation-msg" *ngIf="password.errors?.['minlength'] && password.touched">
-            <i class="fas fa-exclamation-circle"></i> Enter at least 2 characters
+            <i class="fas fa-exclamation-circle"></i> Password must be at least 8 characters
           </div>
+        </div>
+
+        <!-- Forgot Password Link -->
+        <div class="forgot-password-row">
+          <a routerLink="/forgot-password" class="forgot-link">Forgot Password?</a>
         </div>
 
         <!-- Error Message -->

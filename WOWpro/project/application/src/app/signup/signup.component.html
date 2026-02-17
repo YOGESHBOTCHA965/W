@@ -176,14 +176,50 @@
             placeholder="Create a strong password"
             #password="ngModel"
             required
-            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"
+            (ngModelChange)="checkPasswordPolicy($event)"
           />
-          <div class="validation-msg" *ngIf="password.invalid && (password.dirty || password.touched)">
-            <div *ngIf="password.errors?.['required']">
+          <div class="validation-msg" *ngIf="password.errors?.['required'] && password.touched">
+            <div>
               <i class="fas fa-exclamation-circle"></i> Password is required
             </div>
-            <div *ngIf="password.errors?.['pattern']">
-              <i class="fas fa-exclamation-circle"></i> Must contain uppercase, lowercase, number, special character &amp; 8+ chars
+          </div>
+
+          <!-- Password Policy Checklist -->
+          <div class="password-policy" *ngIf="showPasswordPolicy">
+            <div class="policy-header">
+              <i class="fas fa-shield-alt"></i> Password Requirements
+            </div>
+
+            <!-- Strength Bar -->
+            <div class="strength-bar-container">
+              <div class="strength-bar">
+                <div class="strength-fill" [style.width]="(passwordStrength / 5 * 100) + '%'" [style.background]="getStrengthColor()"></div>
+              </div>
+              <span class="strength-label" [style.color]="getStrengthColor()">{{ getStrengthLabel() }}</span>
+            </div>
+
+            <!-- Checklist Items -->
+            <div class="policy-items">
+              <div class="policy-item" [class.met]="passwordPolicy.minLength">
+                <i [class]="passwordPolicy.minLength ? 'fas fa-check-circle' : 'far fa-circle'"></i>
+                At least 8 characters
+              </div>
+              <div class="policy-item" [class.met]="passwordPolicy.hasUppercase">
+                <i [class]="passwordPolicy.hasUppercase ? 'fas fa-check-circle' : 'far fa-circle'"></i>
+                One uppercase letter (A-Z)
+              </div>
+              <div class="policy-item" [class.met]="passwordPolicy.hasLowercase">
+                <i [class]="passwordPolicy.hasLowercase ? 'fas fa-check-circle' : 'far fa-circle'"></i>
+                One lowercase letter (a-z)
+              </div>
+              <div class="policy-item" [class.met]="passwordPolicy.hasNumber">
+                <i [class]="passwordPolicy.hasNumber ? 'fas fa-check-circle' : 'far fa-circle'"></i>
+                One number (0-9)
+              </div>
+              <div class="policy-item" [class.met]="passwordPolicy.hasSpecial">
+                <i [class]="passwordPolicy.hasSpecial ? 'fas fa-check-circle' : 'far fa-circle'"></i>
+                One special character (!@#$%^&amp;*)
+              </div>
             </div>
           </div>
         </div>
@@ -210,6 +246,53 @@
           </div>
           <div class="validation-msg" *ngIf="confirmPassword.touched && password.value !== confirmPassword.value">
             <i class="fas fa-exclamation-circle"></i> Passwords do not match
+          </div>
+        </div>
+
+        <!-- Security Question -->
+        <div class="security-question-section">
+          <div class="security-header">
+            <i class="fas fa-shield-alt"></i> Security Question
+            <span class="security-hint">Used to verify your identity if you forget your password</span>
+          </div>
+
+          <div class="form-group">
+            <label class="wow-label" for="securityQuestion">
+              <i class="fas fa-question-circle"></i> Choose a Question
+            </label>
+            <select
+              class="wow-input"
+              id="securityQuestion"
+              name="securityQuestion"
+              ngModel
+              #securityQuestionField="ngModel"
+              required
+            >
+              <option value="" disabled selected>Select a security question</option>
+              <option *ngFor="let q of securityQuestions" [value]="q">{{ q }}</option>
+            </select>
+            <div class="validation-msg" *ngIf="securityQuestionField.invalid && (securityQuestionField.dirty || securityQuestionField.touched)">
+              <i class="fas fa-exclamation-circle"></i> Security question is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="wow-label" for="securityAnswer">
+              <i class="fas fa-key"></i> Your Answer
+            </label>
+            <input
+              class="wow-input"
+              type="text"
+              id="securityAnswer"
+              name="securityAnswer"
+              ngModel
+              placeholder="Enter your answer (case-insensitive)"
+              #securityAnswerField="ngModel"
+              required
+            />
+            <div class="validation-msg" *ngIf="securityAnswerField.invalid && (securityAnswerField.dirty || securityAnswerField.touched)">
+              <i class="fas fa-exclamation-circle"></i> Security answer is required
+            </div>
           </div>
         </div>
 

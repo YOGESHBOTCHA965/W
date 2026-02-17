@@ -25,29 +25,39 @@
         </li>
         <li>
           <a routerLink="/bikes" routerLinkActive="active" (click)="closeMobileMenu()">
-            <i class="fas fa-motorcycle"></i> Bikes
+            <i class="fas fa-motorcycle"></i> Motorbikes
           </a>
         </li>
         <li>
           <a routerLink="/bicycleservices" routerLinkActive="active" (click)="closeMobileMenu()">
-            <i class="fas fa-bicycle"></i> Bicycles
+            <i class="fas fa-bicycle"></i> Bikes
           </a>
         </li>
         <li>
-          <a routerLink="/aboutus" routerLinkActive="active" (click)="closeMobileMenu()">
-            <i class="fas fa-info-circle"></i> About Us
+          <a routerLink="/price-calculator" routerLinkActive="active" (click)="closeMobileMenu()">
+            <i class="fas fa-calculator"></i> Pricing
           </a>
         </li>
         <li>
-          <a routerLink="/contactus" routerLinkActive="active" (click)="closeMobileMenu()">
-            <i class="fas fa-envelope"></i> Contact Us
+          <a routerLink="/blog" routerLinkActive="active" (click)="closeMobileMenu()">
+            <i class="fas fa-lightbulb"></i> Tips
+          </a>
+        </li>
+        <li>
+          <a routerLink="/reviews" routerLinkActive="active" (click)="closeMobileMenu()">
+            <i class="fas fa-star"></i> Reviews
+          </a>
+        </li>
+        <li *ngIf="isLoggedIn()">
+          <a routerLink="/service-history" routerLinkActive="active" (click)="closeMobileMenu()">
+            <i class="fas fa-history"></i> My Bookings
           </a>
         </li>
       </ul>
 
       <div class="nav-actions">
-        <a class="nav-pro-link" routerLink="/pro" routerLinkActive="active" (click)="closeMobileMenu()">
-          <i class="fas fa-wrench"></i> Register as Pro
+        <a class="nav-sos-link" routerLink="/sos" routerLinkActive="active" (click)="closeMobileMenu()" *ngIf="isLoggedIn()">
+          <i class="fas fa-exclamation-triangle"></i> SOS
         </a>
 
         <ng-container *ngIf="!isLoggedIn()">
@@ -60,12 +70,28 @@
         </ng-container>
 
         <ng-container *ngIf="isLoggedIn()">
-          <span class="nav-user-greeting">
-            <i class="fas fa-user-circle"></i> {{ getUserName() }}
-          </span>
-          <a class="btn-wow btn-wow-outline btn-wow-sm" routerLink="/logout" (click)="closeMobileMenu()">
-            <i class="fas fa-sign-out-alt"></i> Logout
-          </a>
+          <!-- User Dropdown -->
+          <div class="nav-user-dropdown" (click)="toggleUserMenu()">
+            <span class="nav-user-greeting">
+              <i class="fas fa-user-circle"></i> {{ getUserName() }}
+              <i class="fas fa-chevron-down ms-1" style="font-size:0.7rem"></i>
+            </span>
+            <div class="dropdown-menu-custom" [class.show]="userMenuOpen">
+              <a routerLink="/service-history" (click)="closeMobileMenu(); userMenuOpen=false">
+                <i class="fas fa-history"></i> My Bookings
+              </a>
+              <a routerLink="/referral" (click)="closeMobileMenu(); userMenuOpen=false">
+                <i class="fas fa-gift"></i> Referral & Points
+              </a>
+              <a routerLink="/subscription" (click)="closeMobileMenu(); userMenuOpen=false">
+                <i class="fas fa-id-badge"></i> Subscription
+              </a>
+              <div class="dropdown-divider"></div>
+              <a routerLink="/logout" (click)="closeMobileMenu(); userMenuOpen=false">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </div>
+          </div>
         </ng-container>
       </div>
     </div>

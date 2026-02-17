@@ -1,0 +1,111 @@
+<section class="section-dark page-section">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-gift me-2"></i>Referral & <span class="text-gradient">Loyalty</span></h2>
+    <p class="section-subtitle">Invite friends, earn rewards, and enjoy exclusive benefits!</p>
+
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary"></div>
+    </div>
+
+    <div *ngIf="!loading && referralData" class="referral-grid">
+      <!-- Stats Cards -->
+      <div class="stats-row">
+        <div class="stat-card glass">
+          <div class="stat-icon"><i class="fas fa-coins"></i></div>
+          <div class="stat-value">{{ referralData.loyaltyPoints }}</div>
+          <div class="stat-name">Loyalty Points</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-value">{{ referralData.referralCount }}</div>
+          <div class="stat-name">People Referred</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+          <div class="stat-value">{{ referralData.totalPointsEarned }}</div>
+          <div class="stat-name">Total Earned</div>
+        </div>
+      </div>
+
+      <!-- Referral Code Card -->
+      <div class="code-card glass">
+        <h4><i class="fas fa-share-alt me-2"></i>Your Referral Code</h4>
+        <div class="code-display">
+          <span class="code-text">{{ referralData.referralCode }}</span>
+          <button class="btn-copy" (click)="copyCode()">
+            <i [class]="copied ? 'fas fa-check' : 'fas fa-copy'"></i>
+            {{ copied ? 'Copied!' : 'Copy' }}
+          </button>
+        </div>
+        <p class="code-info">Share this code to earn <strong>100 points</strong> per referral!</p>
+        <button class="btn btn-whatsapp" (click)="shareOnWhatsApp()">
+          <i class="fab fa-whatsapp me-2"></i>Share on WhatsApp
+        </button>
+      </div>
+
+      <!-- Apply Code -->
+      <div class="apply-card glass">
+        <h4><i class="fas fa-ticket-alt me-2"></i>Have a Referral Code?</h4>
+        <div class="apply-form">
+          <input type="text" [(ngModel)]="applyCode" class="code-input" placeholder="Enter code (e.g. WOW1A2B3C)" maxlength="9">
+          <button class="btn btn-wow-primary" (click)="applyReferral()">Apply</button>
+        </div>
+        <p *ngIf="applyMessage" class="apply-msg" [class.success]="applySuccess">{{ applyMessage }}</p>
+      </div>
+
+      <!-- How It Works -->
+      <div class="how-it-works glass">
+        <h4><i class="fas fa-question-circle me-2"></i>How Referrals Work</h4>
+        <div class="steps-list">
+          <div class="ref-step">
+            <div class="ref-step-num">1</div>
+            <div>
+              <h5>Share Your Code</h5>
+              <p>Send your unique referral code to friends & family</p>
+            </div>
+          </div>
+          <div class="ref-step">
+            <div class="ref-step-num">2</div>
+            <div>
+              <h5>They Sign Up</h5>
+              <p>Your friend creates an account and applies your code</p>
+            </div>
+          </div>
+          <div class="ref-step">
+            <div class="ref-step-num">3</div>
+            <div>
+              <h5>Both Earn Points!</h5>
+              <p>You get 100 points and they get 50 points. Everyone wins!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Points History -->
+      <div *ngIf="referralData.pointsHistory?.length" class="history-card glass">
+        <h4><i class="fas fa-history me-2"></i>Points History</h4>
+        <div class="history-list">
+          <div *ngFor="let h of referralData.pointsHistory" class="history-row">
+            <span class="history-desc">{{ h.description }}</span>
+            <span class="history-pts" [class.positive]="h.amount > 0">
+              {{ h.amount > 0 ? '+' : '' }}{{ h.amount }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leaderboard -->
+      <div *ngIf="leaderboard.length" class="leaderboard-card glass">
+        <h4><i class="fas fa-medal me-2"></i>Top Referrers</h4>
+        <div class="leaderboard-list">
+          <div *ngFor="let l of leaderboard" class="leader-row">
+            <span class="leader-rank" [ngClass]="'rank-' + l.rank">{{ l.rank }}</span>
+            <span class="leader-name">{{ l.name }}</span>
+            <span class="leader-refs">{{ l.referrals }} referrals</span>
+            <span class="leader-pts">{{ l.points }} pts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

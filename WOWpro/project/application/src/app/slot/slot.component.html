@@ -36,9 +36,9 @@
           <input type="tel" class="wow-input" placeholder="Enter your 10-digit phone number" maxlength="10" />
         </div>
 
-        <a routerLink="/thankyou" class="btn btn-wow-primary w-100 btn-confirm">
-          <i class="fas fa-check-circle me-2"></i> Confirm Booking
-        </a>
+        <button class="btn btn-wow-primary w-100 btn-confirm" (click)="proceedToPayment()">
+          <i class="fas fa-check-circle me-2"></i> Confirm & Proceed to Payment
+        </button>
       </div>
 
       <!-- SIDEBAR INFO -->

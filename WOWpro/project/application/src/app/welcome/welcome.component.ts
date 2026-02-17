@@ -29,14 +29,14 @@ export class WelcomeComponent {
   services = [
     {
       icon: 'fas fa-motorcycle',
-      title: 'Bike Service',
+      title: 'Motorbike Service',
       desc: 'Complete motorcycle maintenance and repair services at your doorstep.',
       points: ['Engine Oil Change', 'Brake Inspection', 'Chain & Sprocket', 'Full Body Wash']
     },
     {
       icon: 'fas fa-bicycle',
-      title: 'Bicycle Service',
-      desc: 'Professional bicycle tune-up and repair for all types of cycles.',
+      title: 'Bike Service',
+      desc: 'Professional bike tune-up and repair for all types of bicycles.',
       points: ['Gear Tune-up', 'Wheel Truing', 'Brake Adjustment', 'Full Degrease']
     },
     {

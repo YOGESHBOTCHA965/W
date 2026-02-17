@@ -1,0 +1,81 @@
+.page-section { min-height: 80vh; padding: 100px 0 60px; }
+
+.calculator-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; margin-top: 30px; }
+
+.calc-options, .calc-result {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 30px;
+}
+
+.option-group { margin-bottom: 28px; }
+.option-label { color: #fff; font-size: 1rem; margin-bottom: 14px; }
+.option-label i { color: var(--primary); }
+
+/* Toggle Group */
+.toggle-group { display: flex; gap: 12px; }
+.toggle-btn {
+  flex: 1; padding: 14px; border: 2px solid rgba(255,255,255,0.1); border-radius: 12px;
+  background: transparent; color: rgba(255,255,255,0.6); cursor: pointer;
+  font-size: 1rem; font-weight: 600; transition: all 0.3s;
+}
+.toggle-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(255,107,0,0.1); }
+.toggle-btn i { margin-right: 8px; }
+
+/* Plan Options */
+.plan-options { display: flex; gap: 10px; }
+.plan-btn {
+  flex: 1; padding: 14px 10px; border: 2px solid rgba(255,255,255,0.1); border-radius: 12px;
+  background: transparent; color: rgba(255,255,255,0.6); cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.3s;
+}
+.plan-btn i { font-size: 1.4rem; }
+.plan-btn span { font-weight: 600; }
+.plan-btn small { font-size: 0.7rem; }
+.plan-btn.active { border-color: var(--primary); color: #fff; background: rgba(255,107,0,0.15); }
+.plan-btn.plan-premium.active { border-color: #ff6b00; }
+.plan-btn.plan-pro.active { border-color: #9c27b0; }
+
+/* Issues Grid */
+.issues-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.issue-btn {
+  padding: 12px 8px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px;
+  background: transparent; color: rgba(255,255,255,0.6); cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  font-size: 0.8rem; transition: all 0.3s;
+}
+.issue-btn i { font-size: 1.2rem; }
+.issue-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(255,107,0,0.1); }
+
+/* Result Panel */
+.calc-result { position: sticky; top: 100px; height: fit-content; }
+.result-title { color: #fff; margin-bottom: 24px; }
+.result-title i { color: var(--primary); }
+
+.price-breakdown { margin-bottom: 20px; }
+.price-row {
+  display: flex; justify-content: space-between; padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);
+}
+.price { color: #fff; font-weight: 600; }
+.discount { color: #4caf50; }
+.discount .price { color: #4caf50; }
+
+.price-total {
+  display: flex; justify-content: space-between; padding: 16px 0;
+  border-top: 2px solid var(--primary); margin-top: 8px; color: #fff; font-weight: 700;
+}
+.total-price { font-size: 1.8rem; color: var(--primary); }
+
+.no-result { text-align: center; padding: 40px 20px; color: rgba(255,255,255,0.4); }
+.no-result i { font-size: 3rem; margin-bottom: 12px; display: block; }
+
+.price-note {
+  margin-top: 16px; font-size: 0.8rem; color: rgba(255,255,255,0.4);
+  text-align: center; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .calculator-grid { grid-template-columns: 1fr; }
+  .issues-grid { grid-template-columns: repeat(2, 1fr); }
+  .calc-result { position: static; }
+}

@@ -1,0 +1,139 @@
+<section class="section-dark page-section">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-history me-2"></i>My <span class="text-gradient">Service History</span></h2>
+    <p class="section-subtitle">Track all your bookings, monitor status, and leave reviews</p>
+
+    <!-- Loading State -->
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="mt-3 text-light">Loading your bookings...</p>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!loading && bookings.length === 0" class="empty-state">
+      <div class="empty-icon"><i class="fas fa-calendar-plus"></i></div>
+      <h4>No bookings yet</h4>
+      <p>Book your first service and it will appear here!</p>
+      <a routerLink="/premium" class="btn btn-wow-primary"><i class="fas fa-calendar-check me-2"></i>Book a Service</a>
+    </div>
+
+    <!-- Booking Cards -->
+    <div *ngIf="!loading && bookings.length > 0" class="bookings-grid">
+      <div *ngFor="let b of bookings" class="booking-card glass">
+        <div class="booking-header">
+          <div class="booking-vehicle">
+            <i [class]="b.vehicleType === 'bike' ? 'fas fa-motorcycle' : 'fas fa-bicycle'"></i>
+            <span>{{ b.brand }} {{ b.model }}</span>
+          </div>
+          <span class="booking-status" [ngClass]="getStatusClass(b.status)">
+            <i [class]="getStatusIcon(b.status)"></i> {{ b.status }}
+          </span>
+        </div>
+
+        <div class="booking-details">
+          <div class="detail-row">
+            <span class="detail-label"><i class="fas fa-wrench"></i> Plan</span>
+            <span class="detail-value plan-badge" [ngClass]="'plan-' + b.servicePlan">{{ b.servicePlan }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label"><i class="fas fa-calendar"></i> Date</span>
+            <span class="detail-value">{{ b.slotDate | date:'mediumDate' }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label"><i class="fas fa-clock"></i> Time</span>
+            <span class="detail-value">{{ b.slotTime }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label"><i class="fas fa-dollar-sign"></i> Amount</span>
+            <span class="detail-value amount">${{ b.amount }}</span>
+          </div>
+          <div class="detail-row" *ngIf="b.isEmergency">
+            <span class="detail-label"><i class="fas fa-exclamation-triangle"></i> Type</span>
+            <span class="detail-value sos-badge">🆘 Emergency SOS</span>
+          </div>
+        </div>
+
+        <div class="booking-actions">
+          <button *ngIf="b.status !== 'completed' && b.status !== 'cancelled'"
+                  class="btn-action btn-track" (click)="trackBooking(b)">
+            <i class="fas fa-map-marker-alt"></i> Track
+          </button>
+          <button *ngIf="b.status === 'completed'"
+                  class="btn-action btn-review" (click)="openReview(b._id)">
+            <i class="fas fa-star"></i> Review
+          </button>
+          <button *ngIf="b.status === 'pending' || b.status === 'confirmed'"
+                  class="btn-action btn-cancel" (click)="cancelBooking(b._id)">
+            <i class="fas fa-times"></i> Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tracking Modal -->
+    <div *ngIf="selectedBooking" class="modal-overlay" (click)="closeTracking()">
+      <div class="modal-content glass" (click)="$event.stopPropagation()">
+        <button class="modal-close" (click)="closeTracking()"><i class="fas fa-times"></i></button>
+        <h3 class="modal-title"><i class="fas fa-route me-2"></i>Live Tracking</h3>
+
+        <div *ngIf="trackingLoading" class="text-center py-4">
+          <div class="spinner-border text-primary" role="status"></div>
+        </div>
+
+        <div *ngIf="!trackingLoading && trackingData" class="tracking-content">
+          <div *ngIf="trackingData.mechanicName" class="mechanic-info">
+            <i class="fas fa-user-cog"></i> Mechanic: <strong>{{ trackingData.mechanicName }}</strong>
+          </div>
+
+          <div class="tracking-steps">
+            <div *ngFor="let step of trackingData.steps" class="tracking-step"
+                 [ngClass]="{'step-completed': step.completed, 'step-current': step.current}">
+              <div class="step-dot"></div>
+              <div class="step-line"></div>
+              <div class="step-label">{{ step.label }}</div>
+            </div>
+          </div>
+
+          <div *ngIf="trackingData.estimatedCompletion" class="eta-info">
+            <i class="fas fa-clock"></i> ETA: {{ trackingData.estimatedCompletion | date:'short' }}
+          </div>
+
+          <div *ngIf="trackingData.history?.length" class="status-history">
+            <h5>Status History</h5>
+            <div *ngFor="let h of trackingData.history" class="history-item">
+              <span class="history-time">{{ h.timestamp | date:'short' }}</span>
+              <span class="history-status">{{ h.status }}</span>
+              <span *ngIf="h.note" class="history-note">{{ h.note }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div *ngIf="showReviewModal" class="modal-overlay" (click)="closeReview()">
+      <div class="modal-content glass" (click)="$event.stopPropagation()">
+        <button class="modal-close" (click)="closeReview()"><i class="fas fa-times"></i></button>
+        <h3 class="modal-title"><i class="fas fa-star me-2"></i>Leave a Review</h3>
+
+        <div class="review-form">
+          <div class="star-rating">
+            <span *ngFor="let star of [1,2,3,4,5]" class="star"
+                  [class.active]="star <= reviewRating" (click)="setRating(star)">
+              <i class="fas fa-star"></i>
+            </span>
+          </div>
+
+          <textarea [(ngModel)]="reviewComment" class="review-textarea" rows="4"
+                    placeholder="Share your experience..." maxlength="500"></textarea>
+
+          <p *ngIf="reviewMessage" class="review-message">{{ reviewMessage }}</p>
+
+          <button class="btn btn-wow-primary w-100" (click)="submitReview()" [disabled]="reviewSubmitting">
+            <i class="fas fa-paper-plane me-2"></i>{{ reviewSubmitting ? 'Submitting...' : 'Submit Review' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

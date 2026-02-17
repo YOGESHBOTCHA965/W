@@ -1,0 +1,40 @@
+<section class="section-dark page-section">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-lightbulb me-2"></i>Blog & <span class="text-gradient">Tips</span></h2>
+    <p class="section-subtitle">Expert advice to keep your two-wheeler in perfect shape</p>
+
+    <!-- Article Detail View -->
+    <div *ngIf="selectedArticle" class="article-detail glass">
+      <button class="back-btn" (click)="closeArticle()">
+        <i class="fas fa-arrow-left me-2"></i>Back to Articles
+      </button>
+      <div class="article-header">
+        <span class="article-category"><i [class]="selectedArticle.icon + ' me-1'"></i>{{ selectedArticle.category }}</span>
+        <span class="article-read-time"><i class="fas fa-clock me-1"></i>{{ selectedArticle.readTime }} read</span>
+      </div>
+      <h2 class="article-title">{{ selectedArticle.title }}</h2>
+      <div class="article-body" [innerHTML]="selectedArticle.content"></div>
+      <div class="article-cta">
+        <p>Need professional help?</p>
+        <a routerLink="/premium" class="btn btn-wow-primary"><i class="fas fa-calendar-check me-2"></i>Book a Service</a>
+      </div>
+    </div>
+
+    <!-- Article Cards Grid -->
+    <div *ngIf="!selectedArticle" class="articles-grid">
+      <div *ngFor="let article of articles" class="article-card glass" (click)="openArticle(article)">
+        <div class="card-image" [style.backgroundImage]="'url(' + article.image + ')'">
+          <span class="card-category"><i [class]="article.icon + ' me-1'"></i>{{ article.category }}</span>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ article.title }}</h4>
+          <p class="card-excerpt">{{ article.excerpt }}</p>
+          <div class="card-footer">
+            <span class="read-time"><i class="fas fa-clock me-1"></i>{{ article.readTime }}</span>
+            <span class="read-more">Read More <i class="fas fa-arrow-right ms-1"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -139,6 +139,26 @@
   font-size: 11px;
 }
 
+/* Forgot Password */
+.forgot-password-row {
+  text-align: right;
+  margin-bottom: 12px;
+  margin-top: -8px;
+}
+
+.forgot-link {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
 /* Login Button */
 .login-btn {
   width: 100%;

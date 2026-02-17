@@ -1,0 +1,98 @@
+<section class="sos-section">
+  <div class="container">
+    <!-- Pre-submit view -->
+    <div *ngIf="!submitted" class="sos-form-container">
+      <div class="sos-header">
+        <div class="sos-icon-pulse">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h2 class="sos-title">Emergency <span class="text-gradient">SOS</span></h2>
+        <p class="sos-subtitle">Stranded? Breakdown? We'll dispatch a mechanic ASAP!</p>
+      </div>
+
+      <div class="sos-card glass">
+        <div class="sos-form">
+          <!-- Vehicle Type -->
+          <div class="form-group">
+            <label><i class="fas fa-motorcycle me-2"></i>Vehicle Type</label>
+            <div class="toggle-group">
+              <button class="toggle-btn" [class.active]="vehicleType === 'bike'" (click)="vehicleType = 'bike'">
+                <i class="fas fa-motorcycle"></i> Bike
+              </button>
+              <button class="toggle-btn" [class.active]="vehicleType === 'bicycle'" (click)="vehicleType = 'bicycle'">
+                <i class="fas fa-bicycle"></i> Bicycle
+              </button>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="form-group">
+            <label><i class="fas fa-map-marker-alt me-2"></i>Your Current Location *</label>
+            <textarea [(ngModel)]="address" class="sos-input" rows="2" placeholder="Enter your current address, landmark, or road name" maxlength="500" required></textarea>
+          </div>
+
+          <!-- Contact -->
+          <div class="form-group">
+            <label><i class="fas fa-phone me-2"></i>Contact Number *</label>
+            <input type="tel" [(ngModel)]="contactNo" class="sos-input" placeholder="Your phone number" maxlength="15">
+          </div>
+
+          <!-- Optional: Brand & Model -->
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-tag me-2"></i>Brand (optional)</label>
+              <input type="text" [(ngModel)]="brand" class="sos-input" placeholder="e.g. Honda" maxlength="100">
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-car me-2"></i>Model (optional)</label>
+              <input type="text" [(ngModel)]="model" class="sos-input" placeholder="e.g. Sportster 883" maxlength="100">
+            </div>
+          </div>
+
+          <!-- Issue -->
+          <div class="form-group">
+            <label><i class="fas fa-comment-alt me-2"></i>Describe the issue</label>
+            <textarea [(ngModel)]="notes" class="sos-input" rows="3" placeholder="Flat tire, engine won't start, chain broken, etc." maxlength="1000"></textarea>
+          </div>
+
+          <p *ngIf="message" class="sos-message error"><i class="fas fa-exclamation-circle me-1"></i>{{ message }}</p>
+
+          <button class="btn-sos-submit" (click)="submitSOS()" [disabled]="submitting">
+            <i class="fas fa-paper-plane me-2"></i>{{ submitting ? 'Dispatching...' : 'Send SOS Request' }}
+          </button>
+
+          <div class="sos-call-fallback">
+            <p>Or call us directly:</p>
+            <a href="tel:+17065550147" class="call-link"><i class="fas fa-phone-alt me-2"></i>+1 (706) 555-0147</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post-submit success view -->
+    <div *ngIf="submitted" class="sos-success">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2>SOS Request Sent!</h2>
+      <p class="success-msg">{{ message }}</p>
+      <div class="success-info glass">
+        <div class="info-row">
+          <i class="fas fa-clock"></i>
+          <span>Estimated arrival: <strong>15-30 minutes</strong></span>
+        </div>
+        <div class="info-row">
+          <i class="fas fa-phone"></i>
+          <span>A mechanic will call you shortly</span>
+        </div>
+        <div class="info-row">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Location: {{ address }}</span>
+        </div>
+      </div>
+      <button class="btn btn-wow-primary mt-4" (click)="goToHistory()">
+        <i class="fas fa-history me-2"></i>View My Bookings
+      </button>
+    </div>
+  </div>
+</section>

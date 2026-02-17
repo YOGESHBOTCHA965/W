@@ -1,22 +1,58 @@
 ﻿<!-- ==================== HERO BANNER ==================== -->
 <section class="hero-section">
   <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <!-- Welcome Message -->
-    <div class="welcome-banner animate-fadeInUp" *ngIf="userName">
-      <i class="fas fa-hand-sparkles"></i>
-      Welcome, <strong>{{ userName }}</strong>!
+  <div class="hero-content-grid">
+    <!-- Left: Text Content -->
+    <div class="hero-text animate-fadeInUp">
+      <div class="welcome-banner" *ngIf="userName">
+        <i class="fas fa-hand-sparkles"></i>
+        Welcome, <strong>{{ userName }}</strong>!
+      </div>
+      <h1 class="hero-title">Expert Vehicle Care,<br><span class="text-gradient">At Your Doorstep</span></h1>
+      <p class="hero-subtitle">Columbus, GA's most trusted doorstep motorbike & bike repair service. Professional mechanics, genuine parts, and hassle-free experience, all at your convenience.</p>
+      <div class="hero-buttons">
+        <a routerLink="/premium" class="btn btn-wow-primary btn-lg me-3"><i class="fas fa-calendar-check me-2"></i>Book Now</a>
+        <a routerLink="/aboutus" class="btn btn-wow btn-lg"><i class="fas fa-info-circle me-2"></i>Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-number">10K+</span><span class="stat-label">Happy Customers</span></div>
+        <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Expert Mechanics</span></div>
+        <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Service Areas</span></div>
+      </div>
     </div>
-    <h1 class="hero-title animate-fadeInUp">Expert Vehicle Care,<br><span class="text-gradient">At Your Doorstep</span></h1>
-    <p class="hero-subtitle animate-fadeInUp">India's most trusted doorstep bike & bicycle repair service. Professional mechanics, genuine parts, and hassle-free experience, all at your convenience.</p>
-    <div class="hero-buttons animate-fadeInUp">
-      <a routerLink="/premium" class="btn btn-wow-primary btn-lg me-3"><i class="fas fa-calendar-check me-2"></i>Book Now</a>
-      <a routerLink="/aboutus" class="btn btn-wow btn-lg"><i class="fas fa-info-circle me-2"></i>Learn More</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item"><span class="stat-number">10K+</span><span class="stat-label">Happy Customers</span></div>
-      <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Expert Mechanics</span></div>
-      <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Service Areas</span></div>
+
+    <!-- Right: 3D Service Visual -->
+    <div class="hero-3d-visual animate-fadeInUp">
+      <div class="scene-3d">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+
+        <div class="vehicle-display">
+          <div class="vehicle-icon-main">
+            <i class="fas fa-wrench"></i>
+          </div>
+          <div class="vehicle-ring ring-1"></div>
+          <div class="vehicle-ring ring-2"></div>
+        </div>
+
+        <div class="float-service-card card-pos-1">
+          <i class="fas fa-motorcycle"></i> Motorbike Service
+        </div>
+        <div class="float-service-card card-pos-2">
+          <i class="fas fa-bicycle"></i> Bike Care
+        </div>
+        <div class="float-service-card card-pos-3">
+          <i class="fas fa-oil-can"></i> Oil Change
+        </div>
+
+        <div class="mechanic-badge">
+          <div class="mechanic-avatar"><i class="fas fa-user-cog"></i></div>
+          <div class="mechanic-info">
+            <span class="mechanic-name">Pro Mechanic</span>
+            <span class="mechanic-rating"><i class="fas fa-star"></i> 4.9 Rated</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -99,14 +135,14 @@
     <div class="vehicle-cards">
       <a routerLink="/bikes" class="vehicle-card wow-card">
         <div class="vehicle-icon"><i class="fas fa-motorcycle"></i></div>
-        <h3>Bike Service</h3>
+        <h3>Motorbike Service</h3>
         <p>Complete service solutions for all motorcycle brands, from oil change to engine overhaul.</p>
         <span class="vehicle-cta">Explore Services <i class="fas fa-arrow-right"></i></span>
       </a>
       <a routerLink="/bicycleservices" class="vehicle-card wow-card">
         <div class="vehicle-icon"><i class="fas fa-bicycle"></i></div>
-        <h3>Bicycle Service</h3>
-        <p>Professional bicycle maintenance including gear tuning, brake adjustment, and full overhaul.</p>
+        <h3>Bike Service</h3>
+        <p>Professional bike maintenance including gear tuning, brake adjustment, and full overhaul.</p>
         <span class="vehicle-cta">Explore Services <i class="fas fa-arrow-right"></i></span>
       </a>
     </div>
@@ -258,39 +294,169 @@
 <section class="section-darker" id="brands">
   <div class="container">
     <h2 class="section-title">Brands We <span class="text-gradient">Work On</span></h2>
-    <p class="section-subtitle">Trusted service for all major two-wheeler brands</p>
+    <p class="section-subtitle">Trusted service for all major motorcycle and bike brands</p>
     <div class="brands-strip">
-      <span class="brand-badge">Hero</span>
-      <span class="brand-badge">Honda</span>
-      <span class="brand-badge">Bajaj</span>
-      <span class="brand-badge">KTM</span>
-      <span class="brand-badge">Royal Enfield</span>
-      <span class="brand-badge">Yamaha</span>
-      <span class="brand-badge">TVS</span>
-      <span class="brand-badge">Suzuki</span>
-      <span class="brand-badge">Kawasaki</span>
-      <span class="brand-badge">Ducati</span>
-      <span class="brand-badge">BMW</span>
       <span class="brand-badge">Harley-Davidson</span>
-      <span class="brand-badge">Jawa</span>
-      <span class="brand-badge">Mahindra</span>
-      <span class="brand-badge">Vespa</span>
+      <span class="brand-badge">Honda</span>
+      <span class="brand-badge">Yamaha</span>
+      <span class="brand-badge">Kawasaki</span>
+      <span class="brand-badge">Suzuki</span>
+      <span class="brand-badge">Indian</span>
+      <span class="brand-badge">BMW</span>
+      <span class="brand-badge">Ducati</span>
       <span class="brand-badge">Triumph</span>
-      <span class="brand-badge">OLA Electric</span>
-      <span class="brand-badge">Ather</span>
+      <span class="brand-badge">KTM</span>
+      <span class="brand-badge">Polaris</span>
+      <span class="brand-badge">Can-Am</span>
+      <span class="brand-badge">Aprilia</span>
+      <span class="brand-badge">MV Agusta</span>
+      <span class="brand-badge">Zero</span>
+      <span class="brand-badge">LiveWire</span>
     </div>
-    <h5 class="mt-5 text-center" style="color: var(--primary);">Bicycle Brands</h5>
+    <h5 class="mt-5 text-center" style="color: var(--primary);">Bike Brands</h5>
     <div class="brands-strip mt-3">
-      <span class="brand-badge brand-bicycle">BTWIN</span>
-      <span class="brand-badge brand-bicycle">Rockrider</span>
-      <span class="brand-badge brand-bicycle">Hercules</span>
-      <span class="brand-badge brand-bicycle">Hero Cycles</span>
-      <span class="brand-badge brand-bicycle">Firefox</span>
       <span class="brand-badge brand-bicycle">Trek</span>
+      <span class="brand-badge brand-bicycle">Specialized</span>
+      <span class="brand-badge brand-bicycle">Giant</span>
       <span class="brand-badge brand-bicycle">Cannondale</span>
-      <span class="brand-badge brand-bicycle">BSA</span>
-      <span class="brand-badge brand-bicycle">Montra</span>
+      <span class="brand-badge brand-bicycle">Santa Cruz</span>
       <span class="brand-badge brand-bicycle">Scott</span>
+      <span class="brand-badge brand-bicycle">Cervelo</span>
+      <span class="brand-badge brand-bicycle">Bianchi</span>
+      <span class="brand-badge brand-bicycle">Felt</span>
+      <span class="brand-badge brand-bicycle">Norco</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CUSTOMER REVIEWS TESTIMONIALS ==================== -->
+<section class="section-dark" id="testimonials">
+  <div class="container">
+    <h2 class="section-title">What Our Customers <span class="text-gradient">Say</span></h2>
+    <p class="section-subtitle">Real reviews from happy WOW customers</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card glass" *ngFor="let review of publicReviews">
+        <div class="testimonial-stars">
+          <i *ngFor="let s of [1,2,3,4,5]" class="fas fa-star" [class.dimmed]="s > review.rating"></i>
+        </div>
+        <p class="testimonial-text">"{{ review.comment }}"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+          <div>
+            <span class="author-name">{{ review.userName }}</span>
+            <span class="author-meta">{{ review.vehicleType }} | {{ review.servicePlan }}</span>
+          </div>
+        </div>
+      </div>
+      <!-- Placeholder if no reviews yet -->
+      <div *ngIf="publicReviews.length === 0" class="testimonial-card glass" >
+        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testimonial-text">"Amazing doorstep service! The mechanic was professional and my bike runs like new. Highly recommended!"</p>
+        <div class="testimonial-author"><div class="author-avatar"><i class="fas fa-user-circle"></i></div><div><span class="author-name">Mike T.</span><span class="author-meta">motorbike | premium</span></div></div>
+      </div>
+      <div *ngIf="publicReviews.length === 0" class="testimonial-card glass">
+        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star dimmed"></i></div>
+        <p class="testimonial-text">"Got my bike fixed in just 1 hour at home. Great value for money and very convenient."</p>
+        <div class="testimonial-author"><div class="author-avatar"><i class="fas fa-user-circle"></i></div><div><span class="author-name">Sarah L.</span><span class="author-meta">bike | standard</span></div></div>
+      </div>
+      <div *ngIf="publicReviews.length === 0" class="testimonial-card glass">
+        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testimonial-text">"Used SOS when my motorcycle broke down on I-185. Mechanic arrived in 20 minutes. Lifesaver!"</p>
+        <div class="testimonial-author"><div class="author-avatar"><i class="fas fa-user-circle"></i></div><div><span class="author-name">James W.</span><span class="author-meta">motorbike | pro</span></div></div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a routerLink="/reviews" class="btn btn-wow btn-lg"><i class="fas fa-star me-2"></i>See All Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUICK PRICE CALCULATOR ==================== -->
+<section class="section-darker" id="price-calc">
+  <div class="container">
+    <h2 class="section-title">Quick Price <span class="text-gradient">Calculator</span></h2>
+    <p class="section-subtitle">Get an instant estimate with transparent pricing and zero hidden costs</p>
+    <div class="quick-calc glass">
+      <div class="calc-row">
+        <div class="calc-option">
+          <label>Vehicle</label>
+          <div class="calc-toggle">
+            <button [class.active]="calcVehicle === 'bike'" (click)="calcVehicle = 'bike'; updateCalc()"><i class="fas fa-motorcycle"></i> Motorbike</button>
+            <button [class.active]="calcVehicle === 'bicycle'" (click)="calcVehicle = 'bicycle'; updateCalc()"><i class="fas fa-bicycle"></i> Bike</button>
+          </div>
+        </div>
+        <div class="calc-option">
+          <label>Plan</label>
+          <div class="calc-toggle three">
+            <button [class.active]="calcPlan === 'standard'" (click)="calcPlan = 'standard'; updateCalc()">Standard</button>
+            <button [class.active]="calcPlan === 'premium'" (click)="calcPlan = 'premium'; updateCalc()">Premium</button>
+            <button [class.active]="calcPlan === 'pro'" (click)="calcPlan = 'pro'; updateCalc()">Pro</button>
+          </div>
+        </div>
+        <div class="calc-result-inline">
+          <span class="calc-label">Estimated Price</span>
+          <span class="calc-price">${{ calcResult?.total || '...' }}</span>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <a routerLink="/price-calculator" class="btn btn-wow-outline btn-sm"><i class="fas fa-calculator me-2"></i>Full Calculator with Add-ons</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SUBSCRIPTION PLANS PROMO ==================== -->
+<section class="section-dark" id="subscribe-promo">
+  <div class="container">
+    <div class="subscribe-banner glass">
+      <div class="subscribe-text">
+        <h3><i class="fas fa-id-badge me-2"></i>Save Up to 30% with <span class="text-gradient">Subscription Plans</span></h3>
+        <p>Monthly or annual plans with priority booking, free pickup & drop, and exclusive discounts on every service.</p>
+        <div class="subscribe-highlights">
+          <span><i class="fas fa-check-circle me-1"></i>From $19/month</span>
+          <span><i class="fas fa-check-circle me-1"></i>Cancel anytime</span>
+          <span><i class="fas fa-check-circle me-1"></i>Priority booking</span>
+        </div>
+      </div>
+      <div class="subscribe-cta">
+        <a routerLink="/subscription" class="btn btn-wow-primary btn-lg"><i class="fas fa-rocket me-2"></i>View Plans</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MULTI-CITY EXPANSION BANNER ==================== -->
+<section class="section-darker" id="multi-city">
+  <div class="container">
+    <div class="city-banner glass">
+      <div class="city-content">
+        <h3><i class="fas fa-map-marked-alt me-2"></i>Coming to <span class="text-gradient">Your City</span> Soon!</h3>
+        <p>WOW is expanding across the United States. Join the waitlist and be the first to know when we launch in your city!</p>
+        <div class="city-tags">
+          <span class="city-tag">Atlanta</span>
+          <span class="city-tag">Macon</span>
+          <span class="city-tag">Savannah</span>
+          <span class="city-tag">Augusta</span>
+          <span class="city-tag">Birmingham</span>
+          <span class="city-tag">Montgomery</span>
+        </div>
+      </div>
+      <div class="waitlist-form">
+        <input type="email" [(ngModel)]="waitlistEmail" class="waitlist-input" placeholder="Enter your email">
+        <select [(ngModel)]="waitlistCity" class="waitlist-input waitlist-select">
+          <option value="" disabled selected>Select City</option>
+          <option value="atlanta">Atlanta</option>
+          <option value="macon">Macon</option>
+          <option value="savannah">Savannah</option>
+          <option value="augusta">Augusta</option>
+          <option value="birmingham">Birmingham</option>
+          <option value="montgomery">Montgomery</option>
+        </select>
+        <button class="btn btn-wow-primary" (click)="joinWaitlist()">
+          <i class="fas fa-bell me-1"></i>Notify Me
+        </button>
+        <p *ngIf="waitlistMsg" class="waitlist-msg">{{ waitlistMsg }}</p>
+      </div>
     </div>
   </div>
 </section>
@@ -319,13 +485,13 @@
         <div class="col-md-3">
           <label class="form-label text-light">Select City</label>
           <select class="wow-select form-select">
-            <option value="" selected disabled>-- Choose City --</option>
-            <option value="hyderabad">Hyderabad</option>
-            <option value="bangalore">Bangalore</option>
-            <option value="chennai">Chennai</option>
-            <option value="mumbai">Mumbai</option>
-            <option value="delhi">Delhi</option>
-            <option value="pune">Pune</option>
+            <option value="" selected disabled>-- Choose Area --</option>
+            <option value="columbus">Columbus</option>
+            <option value="midtown">Midtown</option>
+            <option value="northside">Northside</option>
+            <option value="fort-benning">Fort Benning</option>
+            <option value="phenix-city">Phenix City</option>
+            <option value="auburn">Auburn</option>
           </select>
         </div>
         <div class="col-md-3">
@@ -351,7 +517,7 @@
           <span class="faq-icon"><i class="fas fa-plus"></i></span>
         </label>
         <div class="faq-answer">
-          <p>We service all types of two-wheelers including motorcycles, scooters, mopeds, and bicycles. We cover all major brands like Hero, Honda, Bajaj, KTM, Royal Enfield, Yamaha, TVS, Suzuki, Kawasaki, Ducati, BMW, and more.</p>
+          <p>We service all types of motorcycles, scooters, and bikes. We cover all major brands like Harley-Davidson, Honda, Yamaha, Kawasaki, Suzuki, Indian, BMW, Ducati, KTM, Triumph, and more.</p>
         </div>
       </div>
 
@@ -395,11 +561,11 @@
         <input type="checkbox" id="faq5" class="faq-toggle">
         <label for="faq5" class="faq-question">
           <span class="faq-num">05</span>
-          <span>What areas do you serve in Hyderabad?</span>
+          <span>What areas do you serve in Columbus?</span>
           <span class="faq-icon"><i class="fas fa-plus"></i></span>
         </label>
         <div class="faq-answer">
-          <p>We cover all major areas including Gachibowli, Madhapur, LB Nagar, Attapur, Mehdipatnam, Nagole, Uppal, Secunderabad, Kukatpally, JNTU, Bachupally, Dilsukhnagar, Kondapur, Lingampally, and many more locations across Hyderabad.</p>
+          <p>We cover all major areas including Midtown, Northside, South Columbus, Wynnton, Green Island Hills, Fort Benning, Phenix City, Bibb City, Edgewood, Gentian, Cusseta Road, and many more locations across the Columbus metro area.</p>
         </div>
       </div>
 
@@ -411,32 +577,32 @@
 <section class="section-dark" id="locations">
   <div class="container">
     <h2 class="section-title">Service <span class="text-gradient">Locations</span></h2>
-    <p class="section-subtitle">Serving across Hyderabad and beyond</p>
+    <p class="section-subtitle">Serving across Columbus, GA and surrounding areas</p>
     <div class="locations-grid">
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Gachibowli</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Madhapur</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>LB Nagar</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Attapur</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Mehdipatnam</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Bandlaguda</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Nagole</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Uppal</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Secunderabad</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Kukatpally</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>JNTU</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Bachupally</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Mallapur</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Moulali</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>ECIL</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>RTC X Road</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Lakdi Ka Pool</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Shamshabad</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Dilsukhnagar</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Kondapur</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Lingampally</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Gandipet</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Narsingi</span>
-      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Gatkesar</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Midtown</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Northside</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>South Columbus</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Wynnton</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Green Island Hills</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Bibb City</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Fort Benning</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Phenix City</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Edgewood</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Gentian</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Cusseta Road</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Benning Hills</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Buena Vista Road</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Hamilton</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Warm Springs</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Pine Mountain</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Opelika</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Auburn</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Smiths Station</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>West Point</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>LaGrange</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Talbotton</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Manchester</span>
+      <span class="location-tag"><i class="fas fa-map-pin me-1"></i>Waverly Hall</span>
     </div>
   </div>
 </section>

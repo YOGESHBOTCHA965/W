@@ -48,10 +48,10 @@
   padding: 80px 0;
 }
 
-/* ==================== HERO SECTION ==================== */
+/* ==================== HERO SECTION (3D Layout) ==================== */
 .hero-section {
   position: relative;
-  min-height: 85vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 50%, #0F0F1A 100%);
@@ -61,16 +61,25 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(255,107,53,0.12) 0%, transparent 60%),
-              radial-gradient(circle at 70% 80%, rgba(255,107,53,0.06) 0%, transparent 50%);
+  background: radial-gradient(circle at 25% 50%, rgba(255,107,53,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 75% 80%, rgba(255,107,53,0.08) 0%, transparent 50%);
   pointer-events: none;
 }
 
-.hero-content {
+.hero-content-grid {
   position: relative;
   z-index: 2;
-  text-align: center;
-  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  text-align: left;
 }
 
 .hero-title {
@@ -78,15 +87,15 @@
   font-size: 3.5rem;
   font-weight: 800;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: 1.5rem;
 }
 
 .hero-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 650px;
-  margin: 0 auto 2.5rem;
+  max-width: 520px;
+  margin-bottom: 2rem;
   line-height: 1.7;
 }
 
@@ -124,24 +133,272 @@
 
 .hero-stats {
   display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 50px;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .stat-number {
   display: block;
   font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--primary);
 }
 
 .stat-label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 2px;
+}
+
+/* ==================== 3D HERO VISUAL ==================== */
+.hero-3d-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene-3d {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.25;
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow-orb-1 {
+  width: 250px;
+  height: 250px;
+  background: var(--primary);
+  top: 20%;
+  left: 10%;
+}
+
+.glow-orb-2 {
+  width: 180px;
+  height: 180px;
+  background: #FF8C5A;
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.vehicle-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vehicle-icon-main {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, #FF6B35, #FF8C5A);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: #fff;
+  box-shadow: 0 20px 60px rgba(255,107,53,0.4), inset 0 -3px 10px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 3;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.vehicle-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(255,107,53,0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(60deg);
+  animation: spin3d 8s linear infinite;
+}
+
+.vehicle-ring.ring-2 {
+  width: 260px;
+  height: 260px;
+  border-color: rgba(255,107,53,0.1);
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+@keyframes spin3d {
+  from { transform: translate(-50%, -50%) rotateX(60deg) rotateZ(0deg); }
+  to { transform: translate(-50%, -50%) rotateX(60deg) rotateZ(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 20px 60px rgba(255,107,53,0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 25px 70px rgba(255,107,53,0.5); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Floating Service Cards */
+.float-service-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 4;
+  animation: float 5s ease-in-out infinite;
+}
+
+.float-service-card i {
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.card-pos-1 { top: 8%; left: 5%; animation-delay: 0s; }
+.card-pos-2 { top: 15%; right: 5%; animation-delay: 1.5s; }
+.card-pos-3 { bottom: 15%; left: 8%; animation-delay: 3s; }
+
+/* Mechanic Badge */
+.mechanic-badge {
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  border-radius: 16px;
+  z-index: 4;
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.mechanic-avatar {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #2ECC71, #27AE60);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.mechanic-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mechanic-name {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.mechanic-rating {
+  color: #F39C12;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.mechanic-rating i {
+  font-size: 0.7rem;
+}
+
+/* ==================== BRANDS 3D SHOWCASE ==================== */
+.brands-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.brand-3d-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-3d-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,107,53,0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.brand-3d-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,107,53,0.3);
+  box-shadow: 0 20px 60px rgba(255,107,53,0.15);
+}
+
+.brand-3d-card:hover::before {
+  opacity: 1;
+}
+
+.brand-3d-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, rgba(255,107,53,0.15), rgba(255,107,53,0.05));
+  border: 1px solid rgba(255,107,53,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--primary);
+  transition: transform 0.4s;
+}
+
+.brand-3d-card:hover .brand-3d-icon {
+  transform: scale(1.1);
+}
+
+.brand-3d-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.brand-3d-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 /* ==================== SERVICE TYPES ==================== */
@@ -297,7 +554,31 @@
 }
 
 /* ==================== RESPONSIVE ==================== */
+@media (max-width: 1200px) {
+  .brands-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 992px) {
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .scene-3d {
+    width: 350px;
+    height: 350px;
+  }
+
   .hero-title {
     font-size: 2.5rem;
   }
@@ -308,10 +589,6 @@
 
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-stats {
-    gap: 30px;
   }
 }
 
@@ -324,13 +601,28 @@
     font-size: 2rem;
   }
 
+  .scene-3d {
+    width: 300px;
+    height: 300px;
+  }
+
+  .vehicle-icon-main {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+
+  .vehicle-ring { width: 150px; height: 150px; }
+  .vehicle-ring.ring-2 { width: 200px; height: 200px; }
+
   .service-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
   }
 
-  .benefits-grid {
+  .benefits-grid,
+  .brands-showcase-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
@@ -338,16 +630,12 @@
 
   .hero-stats {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
   }
 
   .section-dark,
   .section-darker {
     padding: 50px 0;
-  }
-
-  .hero-section {
-    min-height: 75vh;
   }
 
   .quick-book-card {
@@ -359,6 +647,9 @@
     margin-bottom: 12px;
     width: 100%;
   }
+
+  .float-service-card { display: none; }
+  .mechanic-badge { display: none; }
 }
 
 @media (max-width: 576px) {
@@ -368,9 +659,5 @@
 
   .section-title {
     font-size: 1.6rem;
-  }
-
-  .hero-content {
-    padding: 30px 15px;
   }
 }

@@ -10,7 +10,7 @@ import { filter } from 'rxjs/operators';
 export class AppComponent {
   title = 'WOW - Work On Wheels';
   private currentRoute = '';
-  private hideHeaderRoutes = ['', 'login', 'signup'];
+  private hideHeaderRoutes = ['login', 'signup'];
 
   constructor(private router: Router) {
     this.router.events.pipe(

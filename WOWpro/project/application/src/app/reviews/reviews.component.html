@@ -1,0 +1,59 @@
+<section class="section-dark page-section">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-star me-2"></i>Customer <span class="text-gradient">Reviews</span></h2>
+    <p class="section-subtitle">See what our customers have to say about WOW services</p>
+
+    <!-- Stats Bar -->
+    <div *ngIf="stats" class="review-stats glass">
+      <div class="stat-main">
+        <div class="big-rating">{{ stats.averageRating }}</div>
+        <div class="stars-row">
+          <i *ngFor="let s of getStars(stats.roundedRating)" class="fas fa-star"></i>
+          <i *ngFor="let s of getEmptyStars(stats.roundedRating)" class="far fa-star"></i>
+        </div>
+        <div class="total-reviews">{{ stats.totalReviews }} reviews</div>
+      </div>
+      <div class="stat-bars">
+        <div *ngFor="let d of stats.distribution" class="bar-row">
+          <span class="bar-label">{{ d._id }}★</span>
+          <div class="bar-track">
+            <div class="bar-fill" [style.width.%]="stats.totalReviews ? (d.count / stats.totalReviews * 100) : 0"></div>
+          </div>
+          <span class="bar-count">{{ d.count }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary"></div>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div *ngIf="!loading" class="reviews-grid">
+      <div *ngFor="let r of publicReviews" class="review-card glass">
+        <div class="review-header">
+          <div class="reviewer-avatar"><i class="fas fa-user-circle"></i></div>
+          <div class="reviewer-info">
+            <span class="reviewer-name">{{ r.userName }}</span>
+            <span class="review-date">{{ r.createdAt | date:'mediumDate' }}</span>
+          </div>
+        </div>
+        <div class="review-stars">
+          <i *ngFor="let s of getStars(r.rating)" class="fas fa-star"></i>
+          <i *ngFor="let s of getEmptyStars(r.rating)" class="far fa-star"></i>
+        </div>
+        <p class="review-comment">{{ r.comment }}</p>
+        <div class="review-meta">
+          <span class="meta-tag"><i [class]="r.vehicleType === 'bike' ? 'fas fa-motorcycle' : 'fas fa-bicycle'"></i> {{ r.vehicleType }}</span>
+          <span class="meta-tag"><i class="fas fa-wrench"></i> {{ r.servicePlan }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!loading && publicReviews.length === 0" class="empty-state">
+      <i class="fas fa-comment-slash"></i>
+      <h4>No reviews yet</h4>
+      <p>Be the first to leave a review after your service!</p>
+    </div>
+  </div>
+</section>
